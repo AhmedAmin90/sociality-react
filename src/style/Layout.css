@@ -21,6 +21,7 @@
 }
 
 
+/* Content Area */
 .Layout-status-menu {
     display: flex;
     align-items: center;
@@ -71,3 +72,8 @@
     border-radius: 50%;
 }
 
+
+/* Cards Area */
+.Layout-Cards-area {
+    margin-left: 20px;
+}

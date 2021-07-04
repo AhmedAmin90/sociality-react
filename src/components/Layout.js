@@ -75,7 +75,7 @@ class Layout extends Component {
                             <img src={logo}/>
                         </div>
                         <div className="row h-100">
-                            <div className="Layout-tabs-area col-3 border border-primary">
+                            <div className="Layout-tabs-area col-3 ">
                                 {tabs}
                             </div>
                             <div className="Layout-btns-area p-0 col-9 ">
@@ -89,9 +89,9 @@ class Layout extends Component {
                         </div>
                     </div>
                
-                    <div className="col-9 border border-warning h-100">
-                        <div className="Layout-content-area">
-                            
+                    <div className="Layout-content-area col-9 p-0 ">
+                       
+                        
                             <ul className="Layout-status-menu">
                                 <div className="Layout-status-list-dot-1"></div>
                                 <li className="Layout-status-published">published</li>
@@ -104,6 +104,10 @@ class Layout extends Component {
                                 <div className="Layout-status-list-dot-5"></div>
                                 <li className="Layout-status-notes">Notes</li>
                             </ul>
+                        <div className="Layout-Cards-area row">
+                            <Cards />
+                            <Cards />
+                            <Cards />
                             <Cards />
                         </div>
                     </div>
