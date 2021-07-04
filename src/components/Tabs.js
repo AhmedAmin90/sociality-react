@@ -4,8 +4,8 @@ class Tabs extends Component {
     render(){
         return(
             <div>
-                <h1>Sidebar</h1>
-                <p> brand switching tab </p>
+                {/* <h1>Sidebar</h1>
+                <p> brand switching tab </p> */}
             </div>
         )
     }

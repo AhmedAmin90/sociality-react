@@ -1,0 +1,25 @@
+.Layout {
+    height: 100vh;
+    overflow:hidden;
+}
+
+
+.Layout-sidebar-logo {
+    height: 50px;
+    width: 100%;
+    /* background-color: #31363b;     */
+}
+
+.Layout-sidebar-logo img {
+    margin-top: 10px
+}
+
+.Layout-tabs-area {
+    background-color: #2a2f33;
+    /* height: 100vh; */
+    
+}
+
+.Layout-btns-area {
+    background-color: #393d42 ;
+}
