@@ -1,0 +1,37 @@
+.Tabs {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.Tabs img {
+    width: 80%;
+    border-radius: 10px;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.tabClicked {
+    opacity: 1;
+    padding: 0;
+}
+
+.Tabs-notCliked {
+   
+    opacity: 0.5;
+}
+
+.Tabs-hidden {
+    background-color: #f55661;
+    width: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.Tabs-div-show {
+    display: block;
+}
+
+.Tabs-div-hide {
+    display: none;
+}
