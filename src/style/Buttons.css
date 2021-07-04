@@ -1,0 +1,44 @@
+.Buttons{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    cursor: pointer;
+    align-items: center;
+    padding: 20px;
+}
+
+.Button-icon-name {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.Button-icon-name span {
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.Button-icon {
+    color: #f55661;
+    font-size: 20px;
+}
+
+.Button-plus-minus-icon  {
+    color: #1d1d1d;
+    font-size: 15px;
+}
+
+
+.Button-clicked-style {
+    background-color: #f55661;
+}
+
+.Button-icon-clicked {
+    color: #495059;
+}
+
+.Button-icon-notClicked {
+    color: #f55661 ;
+}

@@ -78,7 +78,7 @@ class Layout extends Component {
                             <div className="Layout-tabs-area col-3 border border-primary">
                                 {tabs}
                             </div>
-                            <div className="Layout-btns-area col-9 ">
+                            <div className="Layout-btns-area p-0 col-9 ">
                                 <Buttons />
                             </div>
                         </div>
