@@ -8,21 +8,27 @@ static defaultProps = {
 }
 
     state = {
-        isClicked: false
+        isClicked: false,
+        notifictaion: true
     }
 
-    handleClick = ({target})=>{
-        this.setState({isClicked: !this.state.isClicked});
-        
+    handleClick = ()=>{
+        this.setState({
+        isClicked: !this.state.isClicked ,
+        notifictaion: false});
     }
 
     render(){
         const tabClicked = this.state.isClicked ? "Tabs-clicked" : "Tabs-notCliked";
         const hiddenDiv = this.state.isClicked ? "Tabs-div-show" : "Tabs-div-hide";
+        const notificationSeen = this.state.notifictaion && this.props.notifictaion ? "Tabs-notification-show" : "Tabs-notification-hide" 
         return(
             <div className="Tabs">
                 <div className={`Tabs-hidden ${hiddenDiv}`}></div>
-                <img src={this.props.logo} onClick={this.handleClick} className={tabClicked} />
+                <div className="Tabs-img">
+                    <div className={notificationSeen}>{this.props.notifictaion}</div>
+                    <img src={this.props.logo} onClick={this.handleClick} className={tabClicked} />
+                </div>
             </div>
         )
     }

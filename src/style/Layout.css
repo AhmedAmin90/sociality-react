@@ -6,8 +6,6 @@
 
 .Layout-sidebar-logo {
     height: 50px;
-    width: 100%;
-    /* background-color: #31363b;     */
 }
 
 .Layout-sidebar-logo img {
@@ -16,8 +14,6 @@
 
 .Layout-tabs-area {
     background-color: #2a2f33;
-    /* height: 100vh; */
-    
 }
 
 .Layout-btns-area {

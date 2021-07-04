@@ -18,33 +18,39 @@ class Layout extends Component {
         {
             id: 1,
             name: "",
-            logo: logoOne
+            logo: logoOne,
+            not: 10
         },
         {
             id: 2,
             name: "",
-            logo: logoTwo
+            logo: logoTwo,
+            not: 8
         }
         ,
         {
             id: 3,
             name: "",
-            logo: logoThree
+            logo: logoThree,
+            not: 0
         }
         ,{
             id: 4,
             name: "",
-            logo: logoFour
+            logo: logoFour,
+            not: 8
         },
         {
             id: 5,
             name: "",
-            logo: logoFive
+            logo: logoFive,
+            not: 0
         },
         {
             id: 6,
             name: "",
-            logo: logoSix
+            logo: logoSix,
+            not: 8
         }
     ],
         posts: {
@@ -58,7 +64,7 @@ class Layout extends Component {
 
     render(){
         const tabs = this.state.tabs.map(tab => (
-            <Tabs key={tab.id} logo={tab.logo} name={tab.name} />
+            <Tabs key={tab.id} logo={tab.logo} name={tab.name} notifictaion={tab.not}/>
         ))
         return(
             <div className="Layout">
