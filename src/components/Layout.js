@@ -79,7 +79,12 @@ class Layout extends Component {
                                 {tabs}
                             </div>
                             <div className="Layout-btns-area p-0 col-9 ">
-                                <Buttons />
+                                 
+                                <Buttons title="summary" icon="fas fa-laptop-code"/>
+                                <Buttons title="publish" icon="fas fa-file-signature" />
+                                <Buttons title="engage" icon="far fa-comments"/>
+                                <Buttons title="listen" icon="fas fa-wave-square"/>
+                                <Buttons title="report" icon="fas fa-chart-bar" />
                             </div>
                         </div>
                     </div>

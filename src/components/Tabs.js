@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import Buttons from './Buttons';
 import '../style/Tabs.css';
 import logo from '../assests/imgs/logo-1.png'
 
@@ -9,13 +10,46 @@ static defaultProps = {
 
     state = {
         isClicked: false,
-        notifictaion: true
+        notifictaion: true,
+        buttons: [{
+            id: 1,
+            title: "summary", 
+            icon: "fas fa-laptop-code"
+        } ,
+        {
+            id:2,
+            title:"publish" ,
+            icon:"fas fa-file-signature" 
+        },
+        {
+            id:3,
+            title:"engage",
+            icon:"far fa-comments"
+        },
+        {
+            id:4,
+            title:"listen",
+            icon:"fas fa-wave-square"
+        } ,
+        {
+            id:5,
+            title:"report",
+            icon:"fas fa-chart-bar"
+        }
+    ]
     }
+
+
 
     handleClick = ()=>{
         this.setState({
         isClicked: !this.state.isClicked ,
         notifictaion: false});
+        // const btnArea = document.querySelector('.Layout-btns-area');
+        // btnArea.innerHTML = "";
+        // const newDiv = document.createElement('div');
+        // newDiv.innerHTML = <h1>Test</h1>
+        // btnArea.insertAdjacentHTML('afterbegin' , <h1>Test</h1>)
     }
 
     render(){

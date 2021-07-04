@@ -8,20 +8,37 @@ class Buttons extends Component {
     handleClick = ()=>{
         this.setState({isClicked: !this.state.isClicked})
     }
+
+    
+
     render(){
-        const btnIconColor = this.state.isClicked ? "Button-icon-clicked" : "Button-icon-notClicked"
-        const btnClickedStyle = this.state.isClicked ? "Button-clicked-style" : ""
-        const btnClicked = this.state.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>
+        const btnIconColor = this.state.isClicked ? "Button-icon-clicked" : "Button-icon-notClicked";
+        const btnClickedStyle = this.state.isClicked ? "Button-clicked-style" : "";
+        const btnClicked = this.state.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>;
+        const ulShowHide = this.state.isClicked ? "Button-list-show" : "Button-list-hide";
+        // const ulText =  this.props.list.map(item => {
+        //     <ul>
+        //         <li onClick={this.handleListClick}> {item} </li>
+        //     </ul>
+           
+        // })
         return(
-            <div className={`Buttons ${btnClickedStyle}`} onClick={this.handleClick}>
-                <div className="Button-icon-name">
-                <i className={`far fa-comments ${btnIconColor}`}></i>
-                <span>Test</span>
+            <div className="Button">
+                <div className={`Buttons ${btnClickedStyle}`} onClick={this.handleClick}>
+                    <div className="Button-icon-name">
+                    <i className={`${this.props.icon} ${btnIconColor}`}></i> 
+                    <span>{this.props.title}</span>
+                    </div>
+                    <div className="Button-plus-minus-icon">
+                        {btnClicked}
+                    </div>
                 </div>
-                <div className="Button-plus-minus-icon">
-                    {btnClicked}
-                </div>
-                
+                    <ul className={ulShowHide}> 
+                    <div className="Button-down-arrow"></div>
+
+                        <li onClick={this.handleListClick}>Test</li> 
+                        <li onClick={this.handleListClick}>Test</li>     
+                    </ul>
             </div>
         )
     }

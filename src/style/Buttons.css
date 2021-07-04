@@ -1,23 +1,31 @@
+.Button {
+    display: flex;
+    flex-direction: column;
+}
+
 .Buttons{
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    height: 60px;
     cursor: pointer;
     align-items: center;
     padding: 20px;
 }
 
 .Button-icon-name {
-    width: 40%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
 .Button-icon-name span {
+    width: 75%;
     font-size: 20px;
     color: white;
     text-transform: uppercase;
+    text-align: left;
+    
 }
 
 .Button-icon {
@@ -41,4 +49,39 @@
 
 .Button-icon-notClicked {
     color: #f55661 ;
+}
+
+
+/* List for the button */
+
+.Button-list-show {
+    width: 80%;
+    color: white;
+    text-transform: capitalize;
+    font-size: 18px;
+    text-align: left;
+}
+
+.Button-list-show li {
+    margin-top: 15px;
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+.active{
+    color: #f55661;
+}
+
+.Button-list-hide {
+    display: none;
+}
+
+.Button-down-arrow {
+    position: relative;
+    /* left: 25%; */
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #f55661;
 }
