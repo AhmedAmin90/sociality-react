@@ -1,21 +1,13 @@
 import React , {Component} from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
-
+import '../style/Cards.css'
 
 class Cards extends Component {
 
-    //  componentDidMount(){
-    //    fetch('./data.json')
-    //    .then((res)=> {
-    //     res.clone().json()})
-    //    .then((data)=> {
-    //     console.log(data)
-    //    })
-    // }
     render(){
         return(
-            <div className="Card-body">
+            <div className="row">
+            <div className="Card-body col-4">
                <div className="Card-social-icon">
 
                </div>
@@ -38,6 +30,7 @@ class Cards extends Component {
                     </ul>
 
                </div>
+            </div>
             </div>
         )
     }

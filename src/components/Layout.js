@@ -53,12 +53,12 @@ class Layout extends Component {
             not: 8
         }
     ],
-        posts: {
+        posts: [{
             id: 0 ,
             companyName: "",
             text: "",
             socialPlatform: ""
-        }
+        }]
     }
 
 
@@ -91,8 +91,20 @@ class Layout extends Component {
                
                     <div className="col-9 border border-warning h-100">
                         <div className="Layout-content-area">
-                            <ul className="Layout-status-menu"></ul>
-
+                            
+                            <ul className="Layout-status-menu">
+                                <div className="Layout-status-list-dot-1"></div>
+                                <li className="Layout-status-published">published</li>
+                                <div className="Layout-status-list-dot-2"></div>
+                                <li className="Layout-status-scheduled">scheduled</li>
+                                <div className="Layout-status-list-dot-3"></div>
+                                <li className="Layout-status-needApproval">Need Approval</li>
+                                <div className="Layout-status-list-dot-4"></div>
+                                <li className="Layout-status-error">Error</li>
+                                <div className="Layout-status-list-dot-5"></div>
+                                <li className="Layout-status-notes">Notes</li>
+                            </ul>
+                            <Cards />
                         </div>
                     </div>
                 </div>
