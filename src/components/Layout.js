@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import Buttons from './Buttons';
 import Tabs from './Tabs';
 import Cards from './Cards';
+import Status from './Status';
 import logo from '../assests/imgs/logo.png';
 import '../style/Layout.css';
 import logoOne from '../assests/imgs/logo-1.png'
@@ -90,19 +91,12 @@ class Layout extends Component {
                     </div>
                
                     <div className="Layout-content-area col-9 p-0 ">
-                       
-                        
                             <ul className="Layout-status-menu">
-                                <div className="Layout-status-list-dot-1"></div>
-                                <li className="Layout-status-published">published</li>
-                                <div className="Layout-status-list-dot-2"></div>
-                                <li className="Layout-status-scheduled">scheduled</li>
-                                <div className="Layout-status-list-dot-3"></div>
-                                <li className="Layout-status-needApproval">Need Approval</li>
-                                <div className="Layout-status-list-dot-4"></div>
-                                <li className="Layout-status-error">Error</li>
-                                <div className="Layout-status-list-dot-5"></div>
-                                <li className="Layout-status-notes">Notes</li>
+                                <Status color="#acacac" status="published" />
+                                <Status color="#3ac183" status="scheduled" />
+                                <Status color="#f7bf38" status="Need Approval" />
+                                <Status color="#fb6450" status="Error" />
+                                <Status color="#67b1f2" status="notes" />
                             </ul>
                         <div className="Layout-Cards-area row">
                             <Cards />

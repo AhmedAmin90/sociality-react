@@ -37,7 +37,7 @@
     color: #444444;
 }
 
-.Layout-status-list-dot-1 {
+/* .Layout-status-list-dot-1 {
     background-color: #acacac ;
     width: 12px;
     height: 12px;
@@ -67,6 +67,12 @@
 
 .Layout-status-list-dot-5 {
     background-color: #67b1f2 ;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+} */
+
+.Layout-status-list-dot {
     width: 12px;
     height: 12px;
     border-radius: 50%;
