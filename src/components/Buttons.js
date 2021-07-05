@@ -2,7 +2,8 @@ import React , {Component} from 'react'
 import "../style/Buttons.css"
 class Buttons extends Component {
     state = {
-        isClicked: false
+        isClicked: false,
+        notification: 0
     }
 
     handleClick = ()=>{
@@ -15,6 +16,7 @@ class Buttons extends Component {
         const btnIconColor = this.state.isClicked ? "Button-icon-clicked" : "Button-icon-notClicked";
         const btnClickedStyle = this.state.isClicked ? "Button-clicked-style" : "";
         const btnClicked = this.state.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>;
+        const notificationBtn = this.props.notification ? <div className="Buttons-notification-number">{this.props.notification} </div> :  btnClicked
         const ulShowHide = this.state.isClicked ? "Button-list-show" : "Button-list-hide";
         // const ulText =  this.props.list.map(item => {
         //     <ul>
@@ -30,7 +32,7 @@ class Buttons extends Component {
                     <span>{this.props.title}</span>
                     </div>
                     <div className="Button-plus-minus-icon">
-                        {btnClicked}
+                        {notificationBtn}
                     </div>
                 </div>
                     <ul className={ulShowHide}> 

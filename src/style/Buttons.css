@@ -78,10 +78,20 @@
 
 .Button-down-arrow {
     position: relative;
-    /* left: 25%; */
     width: 0; 
     height: 0; 
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
     border-top: 10px solid #f55661;
+}
+
+.Buttons-notification-number {
+    width: 30px;
+    height: 20px;
+    border: #5c9b92 solid 1px;
+    border-radius: 5px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

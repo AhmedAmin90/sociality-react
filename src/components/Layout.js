@@ -1,6 +1,8 @@
 import React , {Component} from 'react';
+import axios from 'axios';
 import Buttons from './Buttons';
 import Tabs from './Tabs';
+import Date from './Date';
 import Cards from './Cards';
 import Status from './Status';
 import logo from '../assests/imgs/logo.png';
@@ -54,25 +56,44 @@ class Layout extends Component {
             not: 8
         }
     ],
-        posts: [{
-            id: 0 ,
-            companyName: "",
-            text: "",
-            socialPlatform: ""
-        }]
+    dates: {},
+    isLoading: true
     }
 
 
+
+    async componentDidMount(){
+        const getData = await axios.get('./data.json');
+        const data = await getData.data['posts_by_date'];
+        this.setState({
+        dates: {...data} ,
+        isLoading: false});
+    }
+
+
+
     render(){
+
+        const {isLoading} = this.state
+        if (isLoading) {
+          return <div className="App"> Loading...</div>;
+        }
         const tabs = this.state.tabs.map(tab => (
             <Tabs key={tab.id} logo={tab.logo} name={tab.name} notifictaion={tab.not}/>
         ))
+
+        const cards =  Object.keys(this.state.dates).map((date)=>{
+            
+                <Date date={date} />
+         
+            })
+
         return(
             <div className="Layout">
                 <div className="row h-100">
                     
                     <div className="Layout-sidebar col-3">
-                        <div className="Layout-sidebar-logo" >
+                        <div className="Layout-sidebar-logo " >
                             <img src={logo}/>
                         </div>
                         <div className="row h-100">
@@ -80,7 +101,7 @@ class Layout extends Component {
                                 {tabs}
                             </div>
                             <div className="Layout-btns-area p-0 col-9 ">
-                                 
+                                <Buttons title="notification" icon="far fa-bell" notification={3} />
                                 <Buttons title="summary" icon="fas fa-laptop-code"/>
                                 <Buttons title="publish" icon="fas fa-file-signature" />
                                 <Buttons title="engage" icon="far fa-comments"/>
@@ -99,10 +120,9 @@ class Layout extends Component {
                                 <Status color="#67b1f2" status="notes" />
                             </ul>
                         <div className="Layout-Cards-area row">
-                            <Cards />
-                            <Cards />
-                            <Cards />
-                            <Cards />
+
+                            {this.state.dates ? "It is filled" : "It is empty"}
+                             
                         </div>
                     </div>
                 </div>
@@ -113,3 +133,4 @@ class Layout extends Component {
 }
 
 export default Layout
+

@@ -46,11 +46,15 @@ static defaultProps = {
         isClicked: !this.state.isClicked ,
         notifictaion: false});
         // const btnArea = document.querySelector('.Layout-btns-area');
-        // btnArea.innerHTML = "";
         // const newDiv = document.createElement('div');
-        // newDiv.innerHTML = <h1>Test</h1>
-        // btnArea.insertAdjacentHTML('afterbegin' , <h1>Test</h1>)
+        // newDiv.className = "Buttons-notification"
+        // newDiv.innerHTML =
+        // <div>
+        //     <Buttons title="summary" icon="fas fa-laptop-code"/>
+        // </div>
+        // btnArea.insertAdjacentHTML('afterbegin' , newDiv)
     }
+
 
     render(){
         const tabClicked = this.state.isClicked ? "Tabs-clicked" : "Tabs-notCliked";

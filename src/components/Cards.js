@@ -1,5 +1,4 @@
 import React , {Component} from 'react';
-import axios from 'axios';
 import '../style/Cards.css';
 import Delete from '../assests/icons/delete.png';
 import Approved from '../assests/icons/approved.png';
@@ -20,13 +19,14 @@ class Cards extends Component {
         img: postImg
     }
     state = {
-        status : "",
-        platform: "",
-        date: "",
+        dates: {},
+        availableDates : []
     }
+
+
     render(){
         return(
-        
+            
             <div className="Card-body border col-4 m-2">
                <div className="Card-social-icon">
                <i className="fab fa-twitter"></i>
