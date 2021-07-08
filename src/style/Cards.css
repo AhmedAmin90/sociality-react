@@ -2,7 +2,8 @@
     display: flex;
     padding: 0;
     border-radius: 5px;
-    height: 450px;
+    height: 100%;
+    width: 100%;
 }
 
 .Card-social-icon {
@@ -62,9 +63,13 @@
     justify-content: space-around;
 }
 
-.Card-content p {
+.Card-post-body {
     text-align: left;
     margin: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #959595;
+
 }
 
 .Card-post-img {

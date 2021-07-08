@@ -16,7 +16,7 @@ class Sections extends Component {
         const data = await getData.data['posts_by_date'];
         this.setState({
         posts: {...data}});
-        this.setState({postsDates: Object.keys(data)})
+        this.setState({postsDates: Object.keys(data).reverse()})
     }
 
     render() {
@@ -27,10 +27,12 @@ class Sections extends Component {
                 {this.state.posts[date].map(post=> {
                     console.log(post)
                     return <div className="Card-main">
-                        <Cards publishDate={post['published_at']} 
+                        <Cards 
+                        publishDate={post['published_at']} 
                         postBody={post['entry']['message']}
                         channel={post['account']['channel']}
-                        status={post['status']} />
+                        status={post['status']}
+                        img={post['entry']['image'][0]} />
                         </div>
                         })}
                        </div>

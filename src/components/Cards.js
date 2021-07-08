@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 import '../style/Cards.css';
+import DefaultImg from '../assests/imgs/noImg.png';
 import Delete from '../assests/icons/delete.png';
 import Approved from '../assests/icons/approved.png';
 import Comment from '../assests/icons/comment.png';
@@ -9,7 +10,8 @@ import Retweet from '../assests/icons/retweet.png';
 import Seen from '../assests/icons/seen.png';
 import Settings from '../assests/icons/settings.png';
 import WaitingApproval from '../assests/icons/waitingApproval.png';
-import postImg from '../assests/imgs/postImg.png'
+import postImg from '../assests/imgs/postImg.png';
+import ShareImg from '../assests/icons/share.png';
 
 
 
@@ -23,10 +25,13 @@ class Cards extends Component {
         availableDates : [],
     }
 
+//    addDefaultSrc = (e)=> {
+//     e.target.src = {DefaultImg}
+//     }
+
 
     render(){
         const statusColor = ()=> {
-            
             if (this.props.status == 0 ) {
                 return 'need-approval-color'
             }
@@ -62,8 +67,52 @@ class Cards extends Component {
                         </div>;
             }
 
-
         } 
+
+        const statusIcons = ()=> {
+            if (this.props.status == 0 ) {
+                return  <ul>
+                <li><img src={WaitingApproval}/></li>
+                <li><img src={Delete}/></li>
+                <li><img src={Settings}/></li>
+            </ul>
+            }
+            else if (this.props.status === 1 ) {
+                return   <ul>
+                <li><img src={Approved}/></li>
+                <li><img src={Delete}/></li>
+                <li><img src={Settings}/></li>
+            </ul>
+            }
+            else  {
+                return <ul>
+                <li><img src={Delete}/></li>
+                <li><img src={Settings}/></li>
+            </ul>
+            }
+        }
+
+        const socialEngageIcons = ()=> {
+            if ( this.props.channel === 'twitter') {
+                return   <ul className="Card-under-img-icons">
+                <li><img src={LikeTwitter}/> 0 </li>
+                <li><img src={Retweet}/> 0 </li>
+                <li><img src={Comment}/> 0 </li>
+                <li><img src={Seen}/> 0 </li>
+            </ul>
+            }
+            else {
+                return   <ul className="Card-under-img-icons">
+                <li><img src={LikeFace}/> 0 </li>
+                <li><img src={Comment}/> 0 </li>
+                <li><img src={ShareImg}/> 0 </li>
+                <li><img src={Seen}/> 0 </li>
+            </ul>
+            }
+        }
+    
+
+
         return(
             
             <div className="Card-body border m-2">
@@ -71,20 +120,22 @@ class Cards extends Component {
                <div className="Card-content">
                     <div className="Card-date">
                         <p>{this.props.publishDate}</p>
-                        <ul>
-                            <li><img src={Approved}/></li>
-                            <li><img src={Delete}/></li>
-                            <li><img src={Settings}/></li>
-                        </ul>
+                      {statusIcons()}
                     </div>
-                    <p>{this.props.postBody}</p>
-                    <img className="Card-post-img border" src={this.props.img} />
-                    <ul className="Card-under-img-icons">
+                    <p className="Card-post-body">{this.props.postBody}</p>
+                    <img className="Card-post-img border" src={this.props.img}
+                    // onError={(e) => {
+                    //     e.target.onerror = null
+                    //     e.target.src = {DefaultImg}
+                    //   }}
+                    />
+                    {/* <ul className="Card-under-img-icons">
                         <li><img src={LikeTwitter}/> 0 </li>
                         <li><img src={Retweet}/> 0 </li>
                         <li><img src={Comment}/> 0 </li>
                         <li><img src={Seen}/> 0 </li>
-                    </ul>
+                    </ul> */}
+                    {socialEngageIcons()}
 
                </div>
             </div>
