@@ -95,3 +95,12 @@
     align-items: center;
     justify-content: center;
 }
+
+.Button-list-item {
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+.Button-list-item-active {
+    color: #f55661;
+}

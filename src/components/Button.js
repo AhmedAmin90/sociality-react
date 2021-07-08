@@ -1,14 +1,27 @@
 import React , {Component} from 'react'
 import "../style/Buttons.css"
-class Buttons extends Component {
+class Button extends Component {
     state = {
         isClicked: false,
         notification: 0
     }
 
     handleClick = ()=>{
-        this.setState({isClicked: !this.state.isClicked})
+        this.setState({isClicked: !this.state.isClicked});
     }
+
+    handleListClick = ()=>{
+    [...document.querySelectorAll('.Button-list-item')].forEach(item => {
+        item.addEventListener('click', ()=> {
+          let getOtherItems = document.querySelector('.Button-list-item-active');
+          if (getOtherItems !== null) {
+            getOtherItems.classList.remove('Button-list-item-active');
+          }
+          item.classList.add('Button-list-item-active')
+        })
+      })
+    }
+
 
     
 
@@ -18,12 +31,11 @@ class Buttons extends Component {
         const btnClicked = this.state.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>;
         const notificationBtn = this.props.notification ? <div className="Buttons-notification-number">{this.props.notification} </div> :  btnClicked
         const ulShowHide = this.state.isClicked ? "Button-list-show" : "Button-list-hide";
-        // const ulText =  this.props.list.map(item => {
-        //     <ul>
-        //         <li onClick={this.handleListClick}> {item} </li>
-        //     </ul>
-           
-        // })
+        const ulText =  this.props.list ? this.props.list.map(item => {
+            return <li className="Button-list-item" onClick={this.handleListClick}> {item} </li>
+                 
+
+        }) : "";
         return(
             <div className="Button">
                 <div className={`Buttons ${btnClickedStyle}`} onClick={this.handleClick}>
@@ -37,13 +49,11 @@ class Buttons extends Component {
                 </div>
                     <ul className={ulShowHide}> 
                     <div className="Button-down-arrow"></div>
-
-                        <li onClick={this.handleListClick}>Test</li> 
-                        <li onClick={this.handleListClick}>Test</li>     
+                        {ulText}
                     </ul>
             </div>
         )
     }
 }
 
-export default Buttons
+export default Button

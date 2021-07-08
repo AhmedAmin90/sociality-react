@@ -1,10 +1,10 @@
 import React , {Component} from 'react';
-import Buttons from './Buttons';
+import Button from './Button';
 import axios from 'axios';
 import '../style/Tabs.css';
 import logo from '../assests/imgs/logo-1.png'
 
-class Tabs extends Component {
+class Tab extends Component {
 static defaultProps = {
     logo: logo
 }
@@ -12,32 +12,32 @@ static defaultProps = {
     state = {
         isClicked: false,
         notifictaion: true,
-        buttons: [{
-            id: 1,
-            title: "summary", 
-            icon: "fas fa-laptop-code"
-        } ,
-        {
-            id:2,
-            title:"publish" ,
-            icon:"fas fa-file-signature" 
-        },
-        {
-            id:3,
-            title:"engage",
-            icon:"far fa-comments"
-        },
-        {
-            id:4,
-            title:"listen",
-            icon:"fas fa-wave-square"
-        } ,
-        {
-            id:5,
-            title:"report",
-            icon:"fas fa-chart-bar"
-        }
-    ],
+    //     buttons: [{
+    //         id: 1,
+    //         title: "summary", 
+    //         icon: "fas fa-laptop-code"
+    //     } ,
+    //     {
+    //         id:2,
+    //         title:"publish" ,
+    //         icon:"fas fa-file-signature" 
+    //     },
+    //     {
+    //         id:3,
+    //         title:"engage",
+    //         icon:"far fa-comments"
+    //     },
+    //     {
+    //         id:4,
+    //         title:"listen",
+    //         icon:"fas fa-wave-square"
+    //     } ,
+    //     {
+    //         id:5,
+    //         title:"report",
+    //         icon:"fas fa-chart-bar"
+    //     }
+    // ],
     dates: {}
     }
 
@@ -57,13 +57,17 @@ static defaultProps = {
         notifictaion: false});
     }
 
+    handle = () => {
+        this.props.tabClick(this.props.name)
+    }
+
 
     render(){
-        const tabClicked = this.state.isClicked ? "Tabs-clicked" : "Tabs-notCliked";
-        const hiddenDiv = this.state.isClicked ? "Tabs-div-show" : "Tabs-div-hide";
+        const tabClicked = this.state.isClicked && this.props.clicked ? "Tabs-clicked" : "Tabs-notCliked";
+        const hiddenDiv = this.state.isClicked && this.props.clicked ?  "Tabs-div-show" : "Tabs-div-hide";
         const notificationSeen = this.state.notifictaion && this.props.notifictaion ? "Tabs-notification-show" : "Tabs-notification-hide" 
         return(
-            <div className="Tabs">
+            <div className="Tabs" onClick={this.handle}>
                 <div className={`Tabs-hidden ${hiddenDiv}`}></div>
                 <div className="Tabs-img">
                     <div className={notificationSeen}>{this.props.notifictaion}</div>
@@ -76,4 +80,4 @@ static defaultProps = {
     }
 }
 
-export default Tabs
+export default Tab

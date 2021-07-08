@@ -49,7 +49,6 @@ class Sections extends Component {
         return (
             <div>
                 {renderPosts}
-               
             </div>
    
         )
