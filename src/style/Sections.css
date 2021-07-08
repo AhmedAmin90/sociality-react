@@ -1,0 +1,12 @@
+.Sections-title-date {
+    color: #afafaf;
+    text-transform: capitalize;
+    text-align: left;
+    margin: 5px 0;
+    padding: 0 5px;
+}
+
+.Card-main {
+    width: 350px;
+    margin-bottom: 30px;
+}

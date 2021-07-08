@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 import Buttons from './Buttons';
+import axios from 'axios';
 import '../style/Tabs.css';
 import logo from '../assests/imgs/logo-1.png'
 
@@ -36,8 +37,17 @@ static defaultProps = {
             title:"report",
             icon:"fas fa-chart-bar"
         }
-    ]
+    ],
+    dates: {}
     }
+
+
+    async componentDidMount(){
+        const getData = await axios.get('./data.json');
+        const data = await getData.data['posts_by_date'];
+        this.setState({dates: {...data}});
+    }
+
 
 
 
@@ -45,14 +55,6 @@ static defaultProps = {
         this.setState({
         isClicked: !this.state.isClicked ,
         notifictaion: false});
-        // const btnArea = document.querySelector('.Layout-btns-area');
-        // const newDiv = document.createElement('div');
-        // newDiv.className = "Buttons-notification"
-        // newDiv.innerHTML =
-        // <div>
-        //     <Buttons title="summary" icon="fas fa-laptop-code"/>
-        // </div>
-        // btnArea.insertAdjacentHTML('afterbegin' , newDiv)
     }
 
 
@@ -65,7 +67,9 @@ static defaultProps = {
                 <div className={`Tabs-hidden ${hiddenDiv}`}></div>
                 <div className="Tabs-img">
                     <div className={notificationSeen}>{this.props.notifictaion}</div>
-                    <img src={this.props.logo} onClick={this.handleClick} className={tabClicked} />
+                    <a onClick={this.handleClick} className={tabClicked} >
+                        <img src={this.props.logo} />
+                    </a>
                 </div>
             </div>
         )

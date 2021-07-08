@@ -4,17 +4,19 @@
 }
 
 .Tabs-img {
-    width: 80%;
-
+    width: 80px;
     margin: 5px auto;
+    position: relative;
 }
 
-.Tabs img {
-    width: 100%;
+.Tabs-img img {
+    width: 50px;
     border-radius: 10px;
     padding: 2px;
     margin-top: 3px;
     cursor: pointer;
+    background-position: center;
+    background-size: cover;
 }
 
 .tabClicked {
@@ -51,7 +53,8 @@
     border-radius: 50%;
     background-color: #54c9b4;
     position: absolute;
-    left: 47px;
+    top: 0;
+    right: 0;
     color: white;
     margin-top: -2px;
     font-size: 12px;

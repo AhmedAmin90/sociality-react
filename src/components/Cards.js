@@ -20,27 +20,64 @@ class Cards extends Component {
     }
     state = {
         dates: {},
-        availableDates : []
+        availableDates : [],
     }
 
 
     render(){
+        const statusColor = ()=> {
+            
+            if (this.props.status == 0 ) {
+                return 'need-approval-color'
+            }
+            else if (this.props.status === 1 ) {
+                return 'scheduled-color'
+            }
+            else if (this.props.status === 2 ) {
+                return 'publishing-color'
+            }
+            else if (this.props.status === 3 ) {
+                return 'published-color'
+            }
+            else {
+                return 'error-color'
+            }
+        }
+
+        const socialLogo = ()=> {
+
+            if (this.props.channel === 'instagrambusiness') {
+                return  <div className={`Card-social-icon ${statusColor()}`}>
+                            <i className="fab fa-instagram"></i>
+                        </div>;
+            }
+            else if ( this.props.channel === 'twitter') {
+                return  <div className={`Card-social-icon ${statusColor()}`}>
+                            <i className="fab fa-twitter"></i>
+                        </div>;
+            }
+            else {
+                return  <div className={`Card-social-icon ${statusColor()}`}>
+                            <i className="fab fa-facebook"></i>
+                        </div>;
+            }
+
+
+        } 
         return(
             
-            <div className="Card-body border col-4 m-2">
-               <div className="Card-social-icon">
-               <i className="fab fa-twitter"></i>
-               </div>
+            <div className="Card-body border m-2">
+               {socialLogo()}
                <div className="Card-content">
                     <div className="Card-date">
-                        <p>Date</p>
+                        <p>{this.props.publishDate}</p>
                         <ul>
                             <li><img src={Approved}/></li>
                             <li><img src={Delete}/></li>
                             <li><img src={Settings}/></li>
                         </ul>
                     </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sagittis purus elit, nec consectetur quam posuere eu.</p>
+                    <p>{this.props.postBody}</p>
                     <img className="Card-post-img border" src={this.props.img} />
                     <ul className="Card-under-img-icons">
                         <li><img src={LikeTwitter}/> 0 </li>

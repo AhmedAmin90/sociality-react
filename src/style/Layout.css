@@ -1,5 +1,4 @@
 .Layout {
-    height: 50vw;
     overflow:hidden;
 }
 
@@ -39,40 +38,6 @@
     color: #444444;
 }
 
-/* .Layout-status-list-dot-1 {
-    background-color: #acacac ;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.Layout-status-list-dot-2 {
-    background-color: #3ac183 ;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.Layout-status-list-dot-3 {
-    background-color: #f7bf38 ;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.Layout-status-list-dot-4 {
-    background-color: #fb6450 ;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.Layout-status-list-dot-5 {
-    background-color: #67b1f2 ;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-} */
 
 .Layout-status-list-dot {
     width: 12px;

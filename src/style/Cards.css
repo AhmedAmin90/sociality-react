@@ -6,13 +6,30 @@
 }
 
 .Card-social-icon {
-    width: 10%;
-    background-color: #f7bf38;
+    width: 50px;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.need-approval-color {
+    background-color: #f7bf38;
+}
+
+.scheduled-color{
+    background-color: #3ac183;
+}
+
+.published-color ,
+.publishing-color {
+    background-color: #acacac;
+}
+
+.error-color {
+    background-color: #fb6450;
 }
 
 .Card-social-icon i {

@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 import axios from 'axios';
 import Buttons from './Buttons';
 import Tabs from './Tabs';
-import Date from './Date';
+import Sections from './Sections';
 import Cards from './Cards';
 import Status from './Status';
 import logo from '../assests/imgs/logo.png';
@@ -62,31 +62,11 @@ class Layout extends Component {
 
 
 
-    async componentDidMount(){
-        const getData = await axios.get('./data.json');
-        const data = await getData.data['posts_by_date'];
-        this.setState({
-        dates: {...data} ,
-        isLoading: false});
-    }
-
-
-
     render(){
 
-        const {isLoading} = this.state
-        if (isLoading) {
-          return <div className="App"> Loading...</div>;
-        }
         const tabs = this.state.tabs.map(tab => (
-            <Tabs key={tab.id} logo={tab.logo} name={tab.name} notifictaion={tab.not}/>
+            <Tabs key={tab.id} logo={tab.logo} name={tab.name} notifictaion={tab.not} tabClick={this.handleTabClick}/>
         ))
-
-        const cards =  Object.keys(this.state.dates).map((date)=>{
-            
-                <Date date={date} />
-         
-            })
 
         return(
             <div className="Layout">
@@ -101,7 +81,7 @@ class Layout extends Component {
                                 {tabs}
                             </div>
                             <div className="Layout-btns-area p-0 col-9 ">
-                                <Buttons title="notification" icon="far fa-bell" notification={3} />
+                               
                                 <Buttons title="summary" icon="fas fa-laptop-code"/>
                                 <Buttons title="publish" icon="fas fa-file-signature" />
                                 <Buttons title="engage" icon="far fa-comments"/>
@@ -120,9 +100,8 @@ class Layout extends Component {
                                 <Status color="#67b1f2" status="notes" />
                             </ul>
                         <div className="Layout-Cards-area row">
-
-                            {this.state.dates ? "It is filled" : "It is empty"}
-                             
+                            <Sections />
+                                               
                         </div>
                     </div>
                 </div>
