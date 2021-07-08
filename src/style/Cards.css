@@ -49,14 +49,18 @@
 .Card-date {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
 }
 
 .Card-date p {
-    margin: 10px;
+    text-align: left;
+    color: #acacac;
+    font-weight: 500;
+    line-height: 1.2;
 }
 
 .Card-date ul {
-    margin: 10px;
     display: flex;
     list-style: none;
     width: 40%;

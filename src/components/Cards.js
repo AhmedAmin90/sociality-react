@@ -120,7 +120,7 @@ class Cards extends Component {
                <div className="Card-content">
                     <div className="Card-date">
                         <p>{this.props.publishDate}</p>
-                      {statusIcons()}
+                         {statusIcons()}
                     </div>
                     <p className="Card-post-body">{this.props.postBody}</p>
                     <img className="Card-post-img border" src={this.props.img}
