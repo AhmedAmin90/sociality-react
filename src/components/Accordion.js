@@ -36,6 +36,16 @@ class Accordion extends Component {
     render(){
         return(
             <div>
+                <div className="Button">
+                <div className="Buttons">
+                    <div className="Button-icon-name">
+                    <i className="far fa-bell Button-icon-notClicked"></i> 
+                    <span> notification </span>
+                    </div>
+                    <div className="Buttons-notification-number">{this.props.notification} </div> 
+                </div>
+            </div>
+            
                 <Button title="summary" icon="fas fa-laptop-code" />
                 <Button title="publish" icon="fas fa-file-signature" list={["compose" , "feed"]} />
                 <Button title="engage" icon="far fa-comments"/>

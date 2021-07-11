@@ -105,13 +105,19 @@ class Switchingtabs extends Component {
 
     handleTabStyle = (id)=> {
         let selectedTab = this.state.tabs.find(tab=> tab.id === id);
+        this.props.handleNot(selectedTab.not)
         selectedTab.clicked = !selectedTab.clicked;
+        selectedTab.not = 0;
         const otherTabs = this.state.tabs.filter(tab => tab.id !== id);
         otherTabs.map(tab=>{
             tab.clicked = false
         })
-        this.setState({tabs: [...this.state.tabs]})
+        this.setState({tabs: [...this.state.tabs]});
     }
+
+
+
+    
 
     render(){
 

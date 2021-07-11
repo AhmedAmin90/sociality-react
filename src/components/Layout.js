@@ -14,6 +14,7 @@ class Layout extends Component {
     state = {
         postsDates: [],
         newPosts : [],
+        notifictaion: 0,
         }
 
     // Update state with the posts that we have to show:
@@ -22,6 +23,10 @@ class Layout extends Component {
             newPosts: newData,
             postsDates: newDates
         })
+    }
+
+    handleNotification = (newNotifictaion)=> {
+        this.setState({notifictaion: newNotifictaion})
     }
     render(){
 
@@ -35,10 +40,10 @@ class Layout extends Component {
                         </div>
                         <div className="row h-100">
                             <div className="Layout-tabs-area col-3 ">
-                                <Switchingtabs clickedTab={this.handleTabChange} />
+                                <Switchingtabs clickedTab={this.handleTabChange} handleNot={this.handleNotification} />
                             </div>
                             <div className="Layout-btns-area p-0 col-9 ">
-                                <Accordion />
+                                <Accordion notification={this.state.notifictaion}/>
                             </div>
                         </div>
                     </div>
