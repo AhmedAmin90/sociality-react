@@ -25,10 +25,6 @@ class Cards extends Component {
         availableDates : [],
     }
 
-//    addDefaultSrc = (e)=> {
-//     e.target.src = {DefaultImg}
-//     }
-
 
     render(){
         const statusColor = ()=> {
@@ -124,17 +120,12 @@ class Cards extends Component {
                     </div>
                     <p className="Card-post-body">{this.props.postBody}</p>
                     <img className="Card-post-img border" src={this.props.img}
-                    // onError={(e) => {
-                    //     e.target.onerror = null
-                    //     e.target.src = {DefaultImg}
-                    //   }}
+                    onError={(e) => {
+                        console.log(e)
+                        e.target.onerror = null
+                        e.target.src = DefaultImg
+                      }}
                     />
-                    {/* <ul className="Card-under-img-icons">
-                        <li><img src={LikeTwitter}/> 0 </li>
-                        <li><img src={Retweet}/> 0 </li>
-                        <li><img src={Comment}/> 0 </li>
-                        <li><img src={Seen}/> 0 </li>
-                    </ul> */}
                     {socialEngageIcons()}
 
                </div>

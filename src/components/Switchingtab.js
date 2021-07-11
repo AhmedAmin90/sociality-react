@@ -1,6 +1,7 @@
 import React , {Component} from 'react';
 import axios from 'axios';
 import Tab from './Tab';
+import Cards from './Cards';
 import Sections from './Sections';
 import logoOne from '../assests/imgs/logo-1.png'
 import logoTwo from '../assests/imgs/logo-2.png'
@@ -22,7 +23,7 @@ class Switchingtabs extends Component {
         },
         {
             id: 2,
-            name: "",
+            name: "Test",
             logo: logoTwo,
             not: 8,
             clicked: false
@@ -74,15 +75,32 @@ class Switchingtabs extends Component {
 
     handleTabClick = (name)=>{
         let selectedTab = this.state.tabs.filter(tab => tab.name === name);
-        console.log(selectedTab);
+        let newData = []
+        // console.log(selectedTab);
         this.state.postsDates.map(date=> {
             {this.state.posts[date].map(post=> {
                 if (post['account']['name'] === name) {
-                    console.log(post)
+                    newData.push(post)
                 }
             })}
-        })        
-        
+        })
+        // newData.splice(1)
+        let datesArr = []
+        newData.map(post=>{
+            const publishArr = post['published_at'].split(' ').splice(0, 1).toString();
+            datesArr.push(publishArr)
+        })
+
+        let finalDateArr = [];
+        for(let date of datesArr){
+            if(finalDateArr.indexOf(date) === -1){
+                finalDateArr.push(date);
+            }
+        }
+        // console.log(finalDateArr) ;
+        // console.log(newData)
+        // console.log(datesArr)
+        this.props.clickedTab(newData , finalDateArr)
     }
 
     render(){

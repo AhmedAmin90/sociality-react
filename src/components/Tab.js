@@ -38,15 +38,15 @@ static defaultProps = {
     //         icon:"fas fa-chart-bar"
     //     }
     // ],
-    dates: {}
+    // dates: {}
     }
 
 
-    async componentDidMount(){
-        const getData = await axios.get('./data.json');
-        const data = await getData.data['posts_by_date'];
-        this.setState({dates: {...data}});
-    }
+    // async componentDidMount(){
+    //     const getData = await axios.get('./data.json');
+    //     const data = await getData.data['posts_by_date'];
+    //     this.setState({dates: {...data}});
+    // }
 
 
 

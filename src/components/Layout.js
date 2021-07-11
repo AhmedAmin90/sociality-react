@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import axios from 'axios';
 import Accordion from './Accordion';
 import Switchingtabs from './Switchingtab';
 import Tab from './Tab';
@@ -10,8 +11,31 @@ import '../style/Layout.css';
 
 
 class Layout extends Component {
+    state = {
+        posts: {},
+        postsDates: [],
+        newPosts : [],
+            }
 
+    async componentDidMount(){
+        const getData = await axios.get('./data.json');
+        const data = await getData.data['posts_by_date'];
+        // this.setState({
+        // posts: {...data}});
+        // this.setState({postsDates: Object.keys(data).reverse()})
+    }
+
+    // componentDidMount(){
+    //     sectionData = // data from json
+    // }
+    handleTabChange = (newData , newDates) => {
+        this.setState({
+            newPosts: newData,
+            postsDates: newDates
+        })
+    }
     render(){
+        console.log(this.state.posts)
         return(
             <div className="Layout">
                 <div className="row h-100">
@@ -22,7 +46,8 @@ class Layout extends Component {
                         </div>
                         <div className="row h-100">
                             <div className="Layout-tabs-area col-3 ">
-                                <Switchingtabs />
+                                <Switchingtabs clickedTab={this.handleTabChange} />
+                                {/* <Switchingtabs handleTabChange={this.handleTabChange} /> */}
                             </div>
                             <div className="Layout-btns-area p-0 col-9 ">
                                 <Accordion />
@@ -32,14 +57,11 @@ class Layout extends Component {
                
                     <div className="Layout-content-area col-9 p-0 ">
                             <ul className="Layout-status-menu">
-                                <Status color="#acacac" status="published" />
-                                <Status color="#3ac183" status="scheduled" />
-                                <Status color="#f7bf38" status="Need Approval" />
-                                <Status color="#fb6450" status="Error" />
-                                <Status color="#67b1f2" status="notes" />
+                                <Status />
                             </ul>
                         <div className="Layout-Cards-area row">
-                            <Sections />              
+                            <Sections posts={this.state.newPosts} postsDates={this.state.postsDates}/>
+                            {/* <Sections data={this.state.sectionData} />               */}
                         </div>
                     </div>
                 </div>
