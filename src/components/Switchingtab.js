@@ -1,8 +1,6 @@
 import React , {Component} from 'react';
 import axios from 'axios';
 import Tab from './Tab';
-import Cards from './Cards';
-import Sections from './Sections';
 import logoOne from '../assests/imgs/logo-1.png'
 import logoTwo from '../assests/imgs/logo-2.png'
 import logoThree from '../assests/imgs/logo-3.png'
@@ -15,7 +13,7 @@ class Switchingtabs extends Component {
     state = {
         tabs: [
         {
-            id: "1",
+            id: 1,
             name: "",
             logo: logoOne,
             not: 10,

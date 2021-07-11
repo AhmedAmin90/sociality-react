@@ -1,6 +1,4 @@
 import React , {Component} from 'react';
-import Button from './Button';
-import axios from 'axios';
 import '../style/Tab.css';
 import logo from '../assests/imgs/logo-1.png'
 
@@ -12,37 +10,7 @@ static defaultProps = {
     state = {
         isClicked: false,
         notifictaion: true,
-    //     buttons: [{
-    //         id: 1,
-    //         title: "summary", 
-    //         icon: "fas fa-laptop-code"
-    //     } ,
-    //     {
-    //         id:2,
-    //         title:"publish" ,
-    //         icon:"fas fa-file-signature" 
-    //     },
-    //     {
-    //         id:3,
-    //         title:"engage",
-    //         icon:"far fa-comments"
-    //     },
-    //     {
-    //         id:4,
-    //         title:"listen",
-    //         icon:"fas fa-wave-square"
-    //     } ,
-    //     {
-    //         id:5,
-    //         title:"report",
-    //         icon:"fas fa-chart-bar"
-    //     }
-    // ],
-    // dates: {}
     }
-
-
-
 
     handleClick = ()=>{
         this.setState({
@@ -50,10 +18,9 @@ static defaultProps = {
         notifictaion: false});
     }
 
-    handle = (e) => {
+    handle = () => {
         this.props.tabClick(this.props.name);
         this.props.tabStyle(this.props.id);
-
     }
 
 
