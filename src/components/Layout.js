@@ -12,22 +12,11 @@ import '../style/Layout.css';
 
 class Layout extends Component {
     state = {
-        posts: {},
         postsDates: [],
         newPosts : [],
-            }
+        }
 
-    async componentDidMount(){
-        const getData = await axios.get('./data.json');
-        const data = await getData.data['posts_by_date'];
-        // this.setState({
-        // posts: {...data}});
-        // this.setState({postsDates: Object.keys(data).reverse()})
-    }
-
-    // componentDidMount(){
-    //     sectionData = // data from json
-    // }
+    // Update state with the posts that we have to show:
     handleTabChange = (newData , newDates) => {
         this.setState({
             newPosts: newData,
@@ -35,7 +24,7 @@ class Layout extends Component {
         })
     }
     render(){
-        console.log(this.state.posts)
+
         return(
             <div className="Layout">
                 <div className="row h-100">
@@ -47,7 +36,6 @@ class Layout extends Component {
                         <div className="row h-100">
                             <div className="Layout-tabs-area col-3 ">
                                 <Switchingtabs clickedTab={this.handleTabChange} />
-                                {/* <Switchingtabs handleTabChange={this.handleTabChange} /> */}
                             </div>
                             <div className="Layout-btns-area p-0 col-9 ">
                                 <Accordion />
@@ -60,8 +48,8 @@ class Layout extends Component {
                                 <Status />
                             </ul>
                         <div className="Layout-Cards-area row">
+                            {/* Pass state to section to show the correct cards: */}
                             <Sections posts={this.state.newPosts} postsDates={this.state.postsDates}/>
-                            {/* <Sections data={this.state.sectionData} />               */}
                         </div>
                     </div>
                 </div>

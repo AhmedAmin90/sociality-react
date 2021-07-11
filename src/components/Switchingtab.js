@@ -15,7 +15,7 @@ class Switchingtabs extends Component {
     state = {
         tabs: [
         {
-            id: 1,
+            id: "1",
             name: "",
             logo: logoOne,
             not: 10,
@@ -74,39 +74,49 @@ class Switchingtabs extends Component {
 
 
     handleTabClick = (name)=>{
-        let selectedTab = this.state.tabs.filter(tab => tab.name === name);
+        // Get correct data that related to the client (company) name:
         let newData = []
-        // console.log(selectedTab);
-        this.state.postsDates.map(date=> {
+         this.state.postsDates.map(date=> {
             {this.state.posts[date].map(post=> {
                 if (post['account']['name'] === name) {
                     newData.push(post)
                 }
             })}
         })
-        // newData.splice(1)
+
+        // Connect Data with its publish date:
         let datesArr = []
         newData.map(post=>{
             const publishArr = post['published_at'].split(' ').splice(0, 1).toString();
             datesArr.push(publishArr)
         })
 
+        // Remove repeated dates:
         let finalDateArr = [];
         for(let date of datesArr){
             if(finalDateArr.indexOf(date) === -1){
                 finalDateArr.push(date);
             }
         }
-        // console.log(finalDateArr) ;
-        // console.log(newData)
-        // console.log(datesArr)
-        this.props.clickedTab(newData , finalDateArr)
+
+        // Pass data with its dates to the layout state:
+        this.props.clickedTab(newData , finalDateArr);
+    }
+
+    handleTabStyle = (id)=> {
+        let selectedTab = this.state.tabs.find(tab=> tab.id === id);
+        selectedTab.clicked = !selectedTab.clicked;
+        const otherTabs = this.state.tabs.filter(tab => tab.id !== id);
+        otherTabs.map(tab=>{
+            tab.clicked = false
+        })
+        this.setState({tabs: [...this.state.tabs]})
     }
 
     render(){
 
         const tabs = this.state.tabs.map(tab => (
-            <Tab key={tab.id} logo={tab.logo} name={tab.name} notifictaion={tab.not} clicked={tab.clicked} tabClick={this.handleTabClick}/>
+            <Tab key={tab.id} id={tab.id} logo={tab.logo} name={tab.name} notifictaion={tab.not} isClicked={tab.clicked} tabStyle={this.handleTabStyle} tabClick={this.handleTabClick}/>
         ))
 
         return(

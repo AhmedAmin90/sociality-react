@@ -121,8 +121,6 @@ class Cards extends Component {
                     <p className="Card-post-body">{this.props.postBody}</p>
                     <img className="Card-post-img border" src={this.props.img}
                     onError={(e) => {
-                        console.log(e)
-                        e.target.onerror = null
                         e.target.src = DefaultImg
                       }}
                     />

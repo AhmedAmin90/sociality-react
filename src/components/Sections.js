@@ -11,18 +11,24 @@ class Sections extends Component {
 
 
     render() {
+        // Take the data from layout component state, and loop to show cards:
         const renderPosts = this.props.postsDates.map(date=> 
             {
+                // Change the form of the date:
                 const newDate = new Date(date);
                 const finalDate = new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(newDate)
             return <div> 
+                {/* Show date before cards: */}
                 <h3 className="Sections-title-date">{finalDate}</h3>
                 <div className="row">
                     {this.props.posts.map(post=>{
+                        // change the form of the date and the time:
                     const publishArr = post['published_at'].split(' ');
                     const postTime = publishArr[1].slice(0 , 5)
                     const postDate = new Date(publishArr[0])
-                    const newPublishDate = new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(postDate) 
+                    const newPublishDate = new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(postDate);
+
+                    // Show the post under its correct publish date:
                     if (post['published_at'].split(' ').splice(0, 1).toString()=== date ) {
                         return <div className="Card-main">
                         <Cards 
@@ -33,23 +39,8 @@ class Sections extends Component {
                         img={post['entry']['image'][0]} />
                         </div>
                     }
-                    // return <h1>{post['published_at'].split(' ').splice(0, 1).toString()}</h1>
+                 
                     })}
-                {/* {this.props.posts[date].map(post=> {
-                    const publishArr = post['published_at'].split(' ');
-                    const postTime = publishArr[1].slice(0 , 5)
-                    const postDate = new Date(publishArr[0])
-                    const newPublishDate = new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(postDate) 
-                    console.log(newPublishDate)
-                    return <div className="Card-main">
-                        <Cards 
-                        publishDate={`${newPublishDate} - ${postTime} ` } 
-                        postBody={post['entry']['message']}
-                        channel={post['account']['channel']}
-                        status={post['status']}
-                        img={post['entry']['image'][0]} />
-                        </div>
-                        })} */}
                        </div>
              </div>
             }

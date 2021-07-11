@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import Button from './Button';
 import axios from 'axios';
-import '../style/Tabs.css';
+import '../style/Tab.css';
 import logo from '../assests/imgs/logo-1.png'
 
 class Tab extends Component {
@@ -42,13 +42,6 @@ static defaultProps = {
     }
 
 
-    // async componentDidMount(){
-    //     const getData = await axios.get('./data.json');
-    //     const data = await getData.data['posts_by_date'];
-    //     this.setState({dates: {...data}});
-    // }
-
-
 
 
     handleClick = ()=>{
@@ -57,14 +50,16 @@ static defaultProps = {
         notifictaion: false});
     }
 
-    handle = () => {
-        this.props.tabClick(this.props.name)
+    handle = (e) => {
+        this.props.tabClick(this.props.name);
+        this.props.tabStyle(this.props.id);
+
     }
 
 
     render(){
-        const tabClicked = this.state.isClicked && this.props.clicked ? "Tabs-clicked" : "Tabs-notCliked";
-        const hiddenDiv = this.state.isClicked && this.props.clicked ?  "Tabs-div-show" : "Tabs-div-hide";
+        const tabClicked = this.props.isClicked  ? "Tabs-clicked tab-active" : "Tabs-notCliked";
+        const hiddenDiv = this.props.isClicked  ?  "Tabs-div-show " : "Tabs-div-hide";
         const notificationSeen = this.state.notifictaion && this.props.notifictaion ? "Tabs-notification-show" : "Tabs-notification-hide" 
         return(
             <div className="Tabs" onClick={this.handle}>
