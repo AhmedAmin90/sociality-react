@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import '../style/Sections.css';
 import Cards from './Cards';
 
@@ -17,7 +18,7 @@ class Sections extends Component {
                 // Change the form of the date:
                 const newDate = new Date(date);
                 const finalDate = new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(newDate)
-            return <div> 
+            return <div  key={uuidv4()}> 
                 {/* Show date before cards: */}
                 <h3 className="Sections-title-date">{finalDate}</h3>
                 <div className="row">
@@ -30,8 +31,9 @@ class Sections extends Component {
 
                     // Show the post under its correct publish date:
                     if (post['published_at'].split(' ').splice(0, 1).toString()=== date ) {
-                        return <div className="Card-main">
+                        return <div className="Card-main"  key={uuidv4()}>
                         <Cards 
+                        key={uuidv4()}
                         publishDate={`${newPublishDate} - ${postTime} ` } 
                         postBody={post['entry']['message']}
                         channel={post['account']['channel']}

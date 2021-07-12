@@ -1,8 +1,6 @@
 import React , {Component} from 'react';
-import axios from 'axios';
 import Accordion from './Accordion';
 import Switchingtabs from './Switchingtab';
-import Tab from './Tab';
 import Sections from './Sections';
 import Status from './Status';
 import logo from '../assests/imgs/logo.png';

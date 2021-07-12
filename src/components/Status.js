@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import '../style/Status.css'
 class Status extends Component {
     state = {status: [
@@ -26,7 +27,7 @@ class Status extends Component {
 
     render(){
         const renderStatus = this.state.status.map(st=> {
-            return  <div className="Status" > 
+            return  <div className="Status" key={uuidv4()} > 
             <div className="Layout-status-list-dot" style={{backgroundColor: st.color}}></div>
             <li>{st.status}</li>
             </div>

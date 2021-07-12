@@ -1,4 +1,5 @@
-import React , {Component} from 'react'
+import React , {Component} from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import "../style/Buttons.css"
 class Button extends Component {
     state = {
@@ -31,7 +32,7 @@ class Button extends Component {
         const btnClicked = this.state.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>;
         const ulShowHide = this.state.isClicked ? "Button-list-show" : "Button-list-hide";
         const ulText =  this.props.list ? this.props.list.map(item => {
-            return <li className="Button-list-item" onClick={this.handleListClick}> {item} </li>
+            return <li key={uuidv4()} className="Button-list-item" onClick={this.handleListClick}> {item} </li>
                  
 
         }) : "";
