@@ -28,7 +28,7 @@ class Cards extends Component {
 
     render(){
         const statusColor = ()=> {
-            if (this.props.status == 0 ) {
+            if (this.props.status === 0 ) {
                 return 'need-approval-color'
             }
             else if (this.props.status === 1 ) {
@@ -66,7 +66,7 @@ class Cards extends Component {
         } 
 
         const statusIcons = ()=> {
-            if (this.props.status == 0 ) {
+            if (this.props.status === 0 ) {
                 return  <ul>
                 <li><img src={WaitingApproval} alt="post-cards-icon"/></li>
                 <li><img src={Delete} alt="post-cards-icon"/></li>

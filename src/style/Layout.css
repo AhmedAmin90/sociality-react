@@ -5,11 +5,15 @@
 .Layout-sidebar-logo {
     height: 50px;
     opacity: 0.9;
-    background-color: #393d42;
+    background-color: #31363b;
+}
+
+.side-bar {
+    min-height: 100vh;
 }
 
 .Layout-sidebar-logo img {
-    margin-top: 10px
+    margin-top: 10px;
 }
 
 .Layout-tabs-area {

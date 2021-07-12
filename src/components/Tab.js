@@ -33,9 +33,7 @@ static defaultProps = {
                 <div className={`Tabs-hidden ${hiddenDiv}`}></div>
                 <div className="Tabs-img">
                     <div className={notificationSeen}>{this.props.notifictaion}</div>
-                    <a onClick={this.handleClick} className={tabClicked} >
-                        <img src={this.props.logo} alt={`${this.props.name} logo`} />
-                    </a>
+                        <img src={this.props.logo} alt={`${this.props.name} logo`} onClick={this.handleClick} className={tabClicked}/>
                 </div>
             </div>
         )

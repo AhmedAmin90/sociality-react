@@ -19,11 +19,10 @@ class Sections extends Component {
                 const newDate = new Date(date);
                 const finalDate = new Intl.DateTimeFormat('en-GB', {year: 'numeric', month: 'long', day: 'numeric'}).format(newDate)
             return <div  key={uuidv4()}> 
-                {/* Show date before cards: */}
                 <h3 className="Sections-title-date">{finalDate}</h3>
                 <div className="row">
                     {this.props.posts.map(post=>{
-                        // change the form of the date and the time:
+                    // change the form of the date and the time:
                     const publishArr = post['published_at'].split(' ');
                     const postTime = publishArr[1].slice(0 , 5)
                     const postDate = new Date(publishArr[0])
@@ -31,7 +30,7 @@ class Sections extends Component {
 
                     // Show the post under its correct publish date:
                     if (post['published_at'].split(' ').splice(0, 1).toString()=== date ) {
-                        return <div className="Card-main"  key={uuidv4()}>
+                        return <div className="Card-main col-4"  key={uuidv4()}>
                         <Cards 
                         key={uuidv4()}
                         publishDate={`${newPublishDate} - ${postTime} ` } 
