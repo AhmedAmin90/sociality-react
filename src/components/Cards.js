@@ -68,22 +68,22 @@ class Cards extends Component {
         const statusIcons = ()=> {
             if (this.props.status == 0 ) {
                 return  <ul>
-                <li><img src={WaitingApproval}/></li>
-                <li><img src={Delete}/></li>
-                <li><img src={Settings}/></li>
+                <li><img src={WaitingApproval} alt="post-cards-icon"/></li>
+                <li><img src={Delete} alt="post-cards-icon"/></li>
+                <li><img src={Settings} alt="post-cards-icon"/></li>
             </ul>
             }
             else if (this.props.status === 1 ) {
                 return   <ul>
-                <li><img src={Approved}/></li>
-                <li><img src={Delete}/></li>
-                <li><img src={Settings}/></li>
+                <li><img src={Approved} alt="post-cards-icon"/></li>
+                <li><img src={Delete} alt="post-cards-icon"/></li>
+                <li><img src={Settings} alt="post-cards-icon"/></li>
             </ul>
             }
             else  {
                 return <ul>
-                <li><img src={Delete}/></li>
-                <li><img src={Settings}/></li>
+                <li><img src={Delete} alt="post-cards-icon"/></li>
+                <li><img src={Settings} alt="post-cards-icon"/></li>
             </ul>
             }
         }
@@ -91,18 +91,18 @@ class Cards extends Component {
         const socialEngageIcons = ()=> {
             if ( this.props.channel === 'twitter') {
                 return   <ul className="Card-under-img-icons">
-                <li><img src={LikeTwitter}/> 0 </li>
-                <li><img src={Retweet}/> 0 </li>
-                <li><img src={Comment}/> 0 </li>
-                <li><img src={Seen}/> 0 </li>
+                <li><img src={LikeTwitter} alt="post-cards-icon"/> 0 </li>
+                <li><img src={Retweet} alt="post-cards-icon"/> 0 </li>
+                <li><img src={Comment} alt="post-cards-icon"/> 0 </li>
+                <li><img src={Seen} alt="post-cards-icon"/> 0 </li>
             </ul>
             }
             else {
                 return   <ul className="Card-under-img-icons">
-                <li><img src={LikeFace}/> 0 </li>
-                <li><img src={Comment}/> 0 </li>
-                <li><img src={ShareImg}/> 0 </li>
-                <li><img src={Seen}/> 0 </li>
+                <li><img src={LikeFace} alt="post-cards-icon"/> 0 </li>
+                <li><img src={Comment} alt="post-cards-icon"/> 0 </li>
+                <li><img src={ShareImg} alt="post-cards-icon"/> 0 </li>
+                <li><img src={Seen} alt="post-cards-icon"/> 0 </li>
             </ul>
             }
         }
@@ -123,6 +123,7 @@ class Cards extends Component {
                     onError={(e) => {
                         e.target.src = DefaultImg
                       }}
+                      alt="post-cards-img"
                     />
                     {socialEngageIcons()}
 
