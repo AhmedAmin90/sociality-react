@@ -28,8 +28,8 @@ class Status extends Component {
     render(){
         const renderStatus = this.state.status.map(st=> {
             return  <div className="Status" key={uuidv4()} > 
-            <div className="Layout-status-list-dot" style={{backgroundColor: st.color}}></div>
-            <li>{st.status}</li>
+                <div className="Layout-status-list-dot" style={{backgroundColor: st.color}}></div>
+                <p>{st.status}</p>
             </div>
        
         })

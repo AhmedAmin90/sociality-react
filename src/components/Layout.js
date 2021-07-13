@@ -4,6 +4,7 @@ import Switchingtabs from './Switchingtab';
 import Sections from './Sections';
 import Status from './Status';
 import logo from '../assests/imgs/logo.png';
+import Profile from '../assests/imgs/profile.png'
 import '../style/Layout.css';
 
 
@@ -46,10 +47,14 @@ class Layout extends Component {
                         </div>
                     </div>
                
-                    <div className="Layout-content-area col-9 p-0 ">
-                            <ul className="Layout-status-menu">
-                                <Status />
-                            </ul>
+                    <div className="Layout-content-area col-9  ">
+                            <div className="d-flex align-items-center justify-content-between">
+                                <ul className="Layout-status-menu">
+                                    <Status />
+                                </ul>
+                            
+                                <img className="Layout-profile-img" src={Profile} alt="Profile-icon" />
+                            </div>
                         <div className="Layout-Cards-area row">
                             {/* Pass state to section to show the correct cards: */}
                             <Sections posts={this.state.newPosts} postsDates={this.state.postsDates}/>

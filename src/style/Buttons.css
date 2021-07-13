@@ -51,13 +51,14 @@
     font-weight: 500;
 }
 
-.Button-icon-clicked {
+/*This was for font awesome icons */
+/* .Button-icon-clicked {
     color: #495059;
 }
 
 .Button-icon-notClicked {
     color: #f55661 ;
-}
+} */
 
 
 /* List for the button */

@@ -26,17 +26,26 @@
 
 
 /* Content Area */
+.Layout-profile-img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+}
 .Layout-status-menu {
     display: flex;
     align-items: center;
     margin-top: 20px;
+    margin-left: 5px;
     list-style: none;
 
 }
 
-.Layout-status-menu li {
+.Layout-status-menu p {
     margin: 15px;
-    font-size: 20px;
+    font-size: 15px;
     text-transform: capitalize;
     color: #444444;
 }

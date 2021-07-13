@@ -27,7 +27,7 @@ class Button extends Component {
     
 
     render(){
-        const btnIconColor = this.state.isClicked ? "Button-icon-clicked" : "Button-icon-notClicked";
+        // const btnIconColor = this.state.isClicked ? "Button-icon-clicked" : "Button-icon-notClicked";
         const btnClickedStyle = this.state.isClicked ? "Button-clicked-style" : "";
         const btnClicked = this.state.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>;
         const ulShowHide = this.state.isClicked ? "Button-list-show" : "Button-list-hide";
