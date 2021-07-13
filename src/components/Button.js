@@ -40,7 +40,10 @@ class Button extends Component {
             <div className="Button">
                 <div className={`Buttons ${btnClickedStyle}`} onClick={this.handleClick}>
                     <div className="Button-icon-name">
-                    <i className={`${this.props.icon} ${btnIconColor}`}></i> 
+                        <div className="Button-icon d-flex">
+                         <img src={this.props.icon} className="Button-icon-image" alt={`${this.props.name} icon`} />
+                        </div>
+                    {/* <i className={`${this.props.icon} ${btnIconColor}`}></i>  */}
                     <span>{this.props.title}</span>
                     </div>
                     <div className="Button-plus-minus-icon">

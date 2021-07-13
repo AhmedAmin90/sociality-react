@@ -4,16 +4,16 @@
 }
 
 .Tabs-img {
-    width: 80px;
     margin: 5px auto;
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .Tabs-img img {
-    width: 50px;
+    width: 45px;
     border-radius: 10px;
     padding: 2px;
-    margin-top: 3px;
     cursor: pointer;
     background-position: center;
     background-size: cover;
@@ -35,15 +35,15 @@
     width: 5px;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
-    margin: 12px 0;
+    margin: 7.5px 0 7.5px 0;
 }
 
 .Tabs-div-show {
-    display: block;
+    opacity: 1;
 }
 
 .Tabs-div-hide {
-    display: none;
+   opacity: 0;
 }
 
 /* Notification */

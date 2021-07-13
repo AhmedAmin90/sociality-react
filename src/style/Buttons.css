@@ -1,16 +1,13 @@
-.Button {
-    display: flex;
-    flex-direction: column;
-}
-
 .Buttons{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     height: 60px;
     cursor: pointer;
-    align-items: center;
     padding: 20px;
+    padding-left: 0;
 }
+
 
 .Button-icon-name {
     width: 60%;
@@ -19,18 +16,25 @@
     align-items: center;
 }
 
+.Button-icon {
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.Button-icon-image{
+    width: 20px;
+    height: 20px;
+    align-self: center;
+}
+
 .Button-icon-name span {
     width: 75%;
     font-size: 20px;
     color: white;
+    font-weight: 300;
     text-transform: uppercase;
     text-align: left;
-    
-}
-
-.Button-icon {
-    color: #f55661;
-    font-size: 20px;
+    align-self: center;
 }
 
 .Button-plus-minus-icon  {
@@ -38,9 +42,13 @@
     font-size: 15px;
 }
 
-
 .Button-clicked-style {
     background-color: #f55661;
+    
+}
+
+.Button-clicked-style span {
+    font-weight: 500;
 }
 
 .Button-icon-clicked {
@@ -55,11 +63,13 @@
 /* List for the button */
 
 .Button-list-show {
-    width: 80%;
+    padding: 0 20px 20px 20px;
     color: white;
     text-transform: capitalize;
     font-size: 18px;
     text-align: left;
+    background-color: #2A2F33;
+    margin: 0;
 }
 
 .Button-list-show li {
@@ -88,6 +98,7 @@
 .Buttons-notification-number {
     width: 30px;
     height: 20px;
+    margin-right: 15px;
     border: #5c9b92 solid 1px;
     border-radius: 5px;
     color: white;
