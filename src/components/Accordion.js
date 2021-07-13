@@ -57,7 +57,7 @@ class Accordion extends Component {
                 <div className="Buttons p-0">
                     <div className="Button-icon-name">
                         <div className="Button-icon d-flex">
-                            <img src={IconOne} alt={`${this.props.title} icon`} className="Button-icon-image"/>
+                            <img src={IconOne} alt={`${this.props.title} icon`} className="Button-icon-image notification-icon"/>
                         </div>
                         <span> notification </span>
                     </div>

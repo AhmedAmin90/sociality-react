@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+![](https://sociality.io/tr/assets/images/sociality-logo.svg)
+# Sociality Task:
+ 
+> This is a task for a junior Front-end application from Sociality.io. This is a dashboard for managing social media marketing for clients.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# In this application:
+- The dashboard has a sidebar including the brand switching tab and an accordion menu and has the content area including the social media posts.
+- Each client has a tab with its logo with number of notification.
+- When the user click on the tab, the client posts will appear in the content area.
+- The posts cards contains information about:
+    1. Status of the post.
+    2. Icons related to the status.
+    3. Icons related to the social media platform.
+    4. Data of the post (Date of publish , body , image (if the image is not loaded it will be replaced by a default image)).
+    5. Data related to the posts engagment.
+- Accordion menu with Buttons.
+- Status bar shows the color scheme of each status.
+- User logo.
 
-## Available Scripts
+# Entry screen:
+![screenshot](src/assests/imgs/home-app.png) 
 
-In the project directory, you can run:
+# Rednering posts:
+1. 
+![screenshot](src/assests/imgs/render-posts.png) 
 
-### `yarn start`
+2.
+![screenshot](src/assests/imgs/no-img.png) 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Notification number:
+The notfication of each tab will show on the specified place in the notification button.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![screenshot](src/assests/imgs/notification-number.png) 
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built With
+- React.
+- JS.
+- Bootstrap.
+- CSS.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Setup
 
-### `yarn eject`
+1. To run this project locally, please ensure you have npm installed.
+2. Open the terminal.
+3. Clone this repository by running:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/AhmedAmin90/sociality-react
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. To install the dependencies Open your terminal at the project folder: 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. Start the server :
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Notes:
+- I followed the design:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![screenshot](src/assests/imgs/design.png) 
+- The design is Not responsive, so I created the styles according to my screen size. So some changes in the style may be present on different screen sizes.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Authors
 
-### Analyzing the Bundle Size
+**Ahmed Amin** 
+- GitHub: [Profile](https://github.com/AhmedAmin90)
+- LinkedIn: [Profile](https://www.linkedin.com/in/web-developer/)
+- AngelList: [Profile](https://angel.co/u/ahmed-amin-22)
+- Twitter: [Profile](https://twitter.com/AhmedAmin12383)
+- Portfolio: [My Portfolio](https://amin-dev-me.netlify.app/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contribute
+Any advice and suggestion for improvement are more than welcome.
+Visit [issues' section](https://github.com/AhmedAmin90/sociality-react/issues)
 
-### Advanced Configuration
+## Show your support
+Give a star if you like this project!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+<p>This project is <a href="./LICENSE">MIT</a> licensed.</p>

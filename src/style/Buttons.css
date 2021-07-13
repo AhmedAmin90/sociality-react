@@ -115,3 +115,7 @@
 .Button-list-item-active {
     color: #f55661;
 }
+
+.notification-icon {
+    margin-left: 10px;
+}
