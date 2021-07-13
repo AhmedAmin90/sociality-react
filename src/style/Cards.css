@@ -5,9 +5,9 @@
     height: 100%;
     width: 100%;
 }
-
+ 
 .Card-social-icon {
-    width: 50px;
+    width: 12%;
     border-bottom-left-radius: 5px;
     border-top-left-radius: 5px;
     display: flex;
@@ -54,40 +54,65 @@
 }
 
 .Card-date p {
+    margin-left: 3px;
     text-align: left;
     color: #acacac;
     font-weight: 500;
-    line-height: 1.2;
+    font-size: 14px;
 }
 
-.Card-date ul {
+.Card-date ul{
+    padding: 0;
     display: flex;
     list-style: none;
-    width: 40%;
-    justify-content: space-around;
+    width: 35%;
+    justify-content:flex-end;
+}
+
+.Card-date ul li {
+    align-self: center;
+    margin-left: 10px;
 }
 
 .Card-post-body {
     text-align: left;
     margin: 10px;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: bold;
     color: #959595;
-
 }
 
 .Card-post-img {
     width: 95%;
-    height: 245px;
+    height: 50%;
     margin: 0 auto;
-    border-radius: 5px;
 }
 
 .Card-under-img-icons {
-    margin: 10px 0;
+    margin: 10px 10px;
     display: flex;
     list-style: none;
     width: 80%;
     justify-content: space-around;
+    align-items: center;
     padding: 0;
+}
+
+.Card-under-img-icons li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.Card-under-img-icons li img {
+    width: 20px;
+
+}
+
+.Card-under-img-icons li p {
+    align-self: center;
+    margin: 10px;
+    font-size: 15px;
+    color: #444444;
 }
