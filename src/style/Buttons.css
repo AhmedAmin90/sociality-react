@@ -29,7 +29,7 @@
 
 .Button-icon-name span {
     width: 75%;
-    font-size: 20px;
+    font-size: 15px;
     color: white;
     font-weight: 300;
     text-transform: uppercase;
@@ -62,15 +62,13 @@
 
 
 /* List for the button */
-
 .Button-list-show {
     padding: 0 20px 20px 20px;
     color: white;
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: 13px;
     text-align: left;
     background-color: #2A2F33;
-    margin: 0;
 }
 
 .Button-list-show li {
@@ -106,6 +104,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 12px;
 }
 
 .Button-list-item {

@@ -30,14 +30,13 @@ class Layout extends Component {
     render(){
 
         return(
-            <div className="Layout">
-                <div className="row h-100">
-                    
-                    <div className="Layout-sidebar col-3">
-                        <div className="Layout-sidebar-logo " >
+           
+                <div className="Layout">
+                    <div className="Layout-sidebar-container">
+                    <div className="Layout-sidebar-logo " >
                             <img src={logo}/>
                         </div>
-                        <div className="row h-100 side-bar">
+                        <div className="Layout-sidebar ">
                             <div className="Layout-tabs-area col-3 ">
                                 <Switchingtabs clickedTab={this.handleTabChange} handleNot={this.handleNotification} />
                             </div>
@@ -61,7 +60,7 @@ class Layout extends Component {
                         </div>
                     </div>
                 </div>
-            </div>
+            
         )
     }
 }

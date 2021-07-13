@@ -1,15 +1,25 @@
 .Layout {
     overflow:hidden;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.Layout-sidebar-container{
+    width: 20%;
 }
 
 .Layout-sidebar-logo {
+    width: 100%;
     height: 50px;
     opacity: 0.9;
     background-color: #31363b;
 }
 
-.side-bar {
+.Layout-sidebar {
     min-height: 100vh;
+    display: flex;
+    height: 100%;
 }
 
 .Layout-sidebar-logo img {
@@ -26,6 +36,9 @@
 
 
 /* Content Area */
+/* .Layout-content-area  {
+    width: 75%;
+} */
 .Layout-profile-img {
     width: 45px;
     height: 45px;
