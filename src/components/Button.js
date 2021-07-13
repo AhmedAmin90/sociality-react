@@ -3,12 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 import "../style/Buttons.css"
 class Button extends Component {
     state = {
-        isClicked: false,
         notification: 0
     }
 
     handleClick = ()=>{
-        this.setState({isClicked: !this.state.isClicked});
+        this.props.handleClick(this.props.title)
     }
 
     handleListClick = ()=>{
@@ -28,16 +27,15 @@ class Button extends Component {
 
     render(){
         // const btnIconColor = this.state.isClicked ? "Button-icon-clicked" : "Button-icon-notClicked";
-        const btnClickedStyle = this.state.isClicked ? "Button-clicked-style" : "";
-        const btnClicked = this.state.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>;
-        const ulShowHide = this.state.isClicked ? "Button-list-show" : "Button-list-hide";
+        const btnClickedStyle = this.props.isClicked ? "Button-clicked-style" : "";
+        const btnClicked = this.props.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>;
+        const ulShowHide = this.props.isClicked ? "Button-list-show" : "Button-list-hide";
         const ulText =  this.props.list ? this.props.list.map(item => {
             return <li key={uuidv4()} className="Button-list-item" onClick={this.handleListClick}> {item} </li>
                  
-
         }) : "";
         return(
-            <div className="Button">
+            <div className="Button" >
                 <div className={`Buttons ${btnClickedStyle}`} onClick={this.handleClick}>
                     <div className="Button-icon-name">
                         <div className="Button-icon d-flex">

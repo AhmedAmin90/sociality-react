@@ -34,7 +34,7 @@ class Layout extends Component {
                 <div className="Layout">
                     <div className="Layout-sidebar-container">
                     <div className="Layout-sidebar-logo " >
-                            <img src={logo}/>
+                            <img src={logo} alt="sociality-icon"/>
                         </div>
                         <div className="Layout-sidebar ">
                             <div className="Layout-tabs-area col-3 ">

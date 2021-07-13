@@ -37,16 +37,27 @@ class Accordion extends Component {
             clicked: false
         }
     ]}
+
+    handleClick = (title)=>{
+        const clickedBtn = this.state.buttons.find(btn => btn.title === title);
+        clickedBtn.clicked = !clickedBtn.clicked;
+        const otherBtns = this.state.buttons.filter(btn=> btn.title !== title);
+        otherBtns.forEach(btn=> {
+            btn.clicked = false
+        })
+        this.setState({buttons: [...this.state.buttons]})
+    }
+
     render(){
         const renderBtns = this.state.buttons.map(btn=>{
-            return <Button key={uuidv4()} title={btn.title} icon={btn.icon} list={btn.list} />
-        })
+            return <Button key={uuidv4()}  isClicked={btn.clicked} handleClick={this.handleClick} title={btn.title} icon={btn.icon} list={btn.list} />
+        }) 
         return(
             <div>
                 <div className="Buttons p-0">
                     <div className="Button-icon-name">
                         <div className="Button-icon d-flex">
-                            <img src={IconOne} className="Button-icon-image"/>
+                            <img src={IconOne} alt={`${this.props.title} icon`} className="Button-icon-image"/>
                         </div>
                         <span> notification </span>
                     </div>
