@@ -1,92 +1,83 @@
 .Layout {
-    overflow:hidden;
-    display: flex;
-    padding: 0;
-    margin: 0;
+  overflow: hidden;
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 
-.Layout-sidebar-container{
-    width: 22%;
+.Layout-sidebar-container {
+  width: 22%;
 }
 
 .Layout-sidebar-logo {
-    width: 100%;
-    height: 50px;
-    opacity: 0.9;
-    background-color: #31363b;
+  width: 100%;
+  height: 50px;
+  opacity: 0.9;
+  background-color: #31363b;
 }
 
 .Layout-sidebar {
-    min-height: 100vh;
-    display: flex;
-    height: 100%;
+  min-height: 100vh;
+  display: flex;
+  height: 100%;
 }
 
 .Layout-sidebar-logo img {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .Layout-tabs-area {
-    background-color: #2a2f33;
+  background-color: #2a2f33;
 }
 
 .Layout-btns-area {
-    background-color: #393d42 ;
+  background-color: #393d42;
 }
-
 
 /* Content Area */
-/* .Layout-content-area  {
-    width: 75%;
-} */
 .Layout-profile-img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    margin-right: 25px;
-    margin-top: 20px;
-    cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 25px;
+  margin-top: 20px;
+  cursor: pointer;
 }
-.Layout-status-menu {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
-    margin-left: 5px;
-    list-style: none;
 
+.Layout-status-menu {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: 5px;
+  list-style: none;
 }
 
 .Layout-status-menu p {
-    margin: 15px;
-    font-size: 15px;
-    text-transform: capitalize;
-    color: #444444;
+  margin: 15px;
+  font-size: 15px;
+  text-transform: capitalize;
+  color: #444;
 }
-
 
 .Layout-status-list-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
-
 
 /* Cards Area */
 .Layout-Cards-area {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
-
-
 @media (max-width: 1130px) {
+  .Layout-status-menu p {
+    margin: 10px;
+    font-size: 10px;
+  }
 
-    .Layout-status-menu p {
-        margin: 10px;
-        font-size: 10px;
-    }
-
-    .Layout-status-list-dot {
-        width: 10px;
-      height: 10px;
-    }
+  .Layout-status-list-dot {
+    width: 10px;
+    height: 10px;
+  }
 }
