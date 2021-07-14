@@ -36,7 +36,7 @@ class Status extends Component {
   }
 
   render() {
-    const status = this.state.status;
+    const { status } = this.state;
     const renderStatus = status.map((st) => (
       <div className="Status" key={st.id}>
         <div className="Layout-status-list-dot" style={{ backgroundColor: st.color }} />

@@ -4,12 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import '../style/Buttons.css';
 
 class Button extends Component {
-  constructor(props) {
-    super(props);
-  }
-
     handleClick = () => {
-      const {handleClick ,  title} = this.props
+      const { handleClick, title } = this.props;
       handleClick(title);
     }
 
@@ -26,14 +22,19 @@ class Button extends Component {
     }
 
     render() {
-      const {isClicked, list, icon, title } = this.props;
+      const {
+        isClicked, list, icon, title,
+      } = this.props;
       const btnClickedStyle = isClicked ? 'Button-clicked-style' : '';
       const btnClicked = isClicked ? <i className="fas fa-minus" /> : <i className="fas fa-plus" />;
       const ulShowHide = isClicked ? 'Button-list-show' : 'Button-list-hide';
       const ulText = list ? list.map((item) => (
-        <li key={uuidv4()} className="Button-list-item" 
-        onClick={this.handleListClick}
-        onKeyDown={this.handleListClick}
+        <li
+          key={uuidv4()}
+          className="Button-list-item"
+          onClick={this.handleListClick}
+          onKeyDown={this.handleListClick}
+          role="menuitem"
         >
           {' '}
           {item}
@@ -42,10 +43,12 @@ class Button extends Component {
       )) : '';
       return (
         <div className="Button">
-          <div className={`Buttons ${btnClickedStyle}`} 
-          onClick={this.handleClick}
-          onKeyDown={this.handleClick}
-          role="button"
+          <div
+            className={`Buttons ${btnClickedStyle}`}
+            onClick={this.handleClick}
+            onKeyDown={this.handleClick}
+            role="button"
+            tabIndex={0}
           >
             <div className="Button-icon-name">
               <div className="Button-icon d-flex">
@@ -68,17 +71,17 @@ class Button extends Component {
 
 Button.defaultProps = {
   isClicked: false,
-  handleClick: () => {} ,
-  title: "",
-  icon: "",
-  list: []
-}
+  handleClick: () => {},
+  title: '',
+  icon: '',
+  list: [],
+};
 
 Button.propTypes = {
   isClicked: PropTypes.bool,
   handleClick: PropTypes.func,
   title: PropTypes.string,
   icon: PropTypes.string,
-  list: PropTypes.array
+  list: PropTypes.instanceOf(Array),
 };
 export default Button;

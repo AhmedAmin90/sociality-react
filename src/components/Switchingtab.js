@@ -73,9 +73,9 @@ class Switchingtabs extends Component {
     handleTabClick = (name) => {
       // Get correct data that related to the client (company) name:
       const newData = [];
-      const {postsDates , posts } = this.state;
+      const { postsDates, posts } = this.state;
       postsDates.forEach((date) => {
-        {posts[date].forEach((post) => {
+        { posts[date].forEach((post) => {
           if (post.account.name === name) {
             newData.push(post);
           }
@@ -90,40 +90,59 @@ class Switchingtabs extends Component {
 
       // Remove repeated dates:
       const finalDateArr = [];
-      for (const date of datesArr) {
-        if (finalDateArr.indexOf(date) === -1) {
-          finalDateArr.push(date);
+      for (let i = 0; i < datesArr.length; i += 1) {
+        if (finalDateArr.indexOf(datesArr[i]) === -1) {
+          finalDateArr.push(datesArr[i]);
         }
       }
 
       // Pass data with its dates to the layout state:
-      this.props.clickedTab(newData, finalDateArr);
+      const { clickedTab } = this.props;
+      clickedTab(newData, finalDateArr);
     }
 
     handleTabStyle = (id) => {
-      const selectedTab = this.state.tabs.find((tab) => tab.id === id);
-      this.props.handleNot(selectedTab.not);
+      const { tabs } = this.state;
+      const { handleNot } = this.props;
+      const selectedTab = tabs.find((tab) => tab.id === id);
+      handleNot(selectedTab.not);
       selectedTab.clicked = !selectedTab.clicked;
       selectedTab.not = 0;
-      const otherTabs = this.state.tabs.filter((tab) => tab.id !== id);
+      const otherTabs = tabs.filter((tab) => tab.id !== id);
       otherTabs.forEach((tab) => {
-        tab.clicked = false;
+        const oTabs = tab;
+        oTabs.clicked = false;
       });
-      this.setState({ tabs: [...this.state.tabs] });
+      this.setState({ tabs: [...tabs] });
     }
 
     render() {
-      const tabs = this.state.tabs.map((tab) => (
-        <Tab key={tab.id} id={tab.id} logo={tab.logo} name={tab.name} notifictaion={tab.not} isClicked={tab.clicked} tabStyle={this.handleTabStyle} tabClick={this.handleTabClick} />
+      const { tabs } = this.state;
+      const renderTabs = tabs.map((tab) => (
+        <Tab
+          key={tab.id}
+          id={tab.id}
+          logo={tab.logo}
+          name={tab.name}
+          notifictaion={tab.not}
+          isClicked={tab.clicked}
+          tabStyle={this.handleTabStyle}
+          tabClick={this.handleTabClick}
+        />
       ));
 
       return (
         <div>
-          {tabs}
+          {renderTabs}
         </div>
       );
     }
 }
+
+Switchingtabs.defaultProps = {
+  clickedTab: () => {},
+  handleNot: () => {},
+};
 
 Switchingtabs.propTypes = {
   clickedTab: PropTypes.func,

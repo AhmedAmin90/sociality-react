@@ -7,24 +7,34 @@ class Tab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      notifictaion: true,
+      notifictaionState: true,
     };
   }
 
     handleClick = () => {
-      this.props.tabClick(this.props.name);
-      this.props.tabStyle(this.props.id);
+      const {
+        tabClick, tabStyle, name, id,
+      } = this.props;
+      tabClick(name);
+      tabStyle(id);
     }
 
     render() {
       const {
         isClicked, notifictaion, logo, name,
       } = this.props;
+      const { notifictaionState } = this.state;
       const tabClicked = isClicked ? 'Tabs-clicked tab-active' : 'Tabs-notCliked';
       const hiddenDiv = isClicked ? 'Tabs-div-show ' : 'Tabs-div-hide';
-      const notificationSeen = this.state.notifictaion && notifictaion ? 'Tabs-notification-show' : 'Tabs-notification-hide';
+      const notificationSeen = notifictaionState && notifictaion ? 'Tabs-notification-show' : 'Tabs-notification-hide';
       return (
-        <div className="Tabs" onClick={this.handleClick}>
+        <div
+          className="Tabs"
+          onClick={this.handleClick}
+          role="button"
+          onKeyDown={this.handleClick}
+          tabIndex={0}
+        >
           <div className={`Tabs-hidden ${hiddenDiv}`} />
           <div className="Tabs-img">
             <div className={notificationSeen}>{notifictaion}</div>
@@ -37,6 +47,12 @@ class Tab extends Component {
 
 Tab.defaultProps = {
   logo,
+  id: 0,
+  name: '',
+  notifictaion: 0,
+  isClicked: false,
+  tabStyle: () => {},
+  tabClick: () => {},
 };
 
 Tab.propTypes = {

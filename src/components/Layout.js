@@ -40,9 +40,10 @@ class Layout extends Component {
             </div>
             <div className="Layout-sidebar ">
               <div className="Layout-tabs-area col-3 ">
-                <Switchingtabs 
-                clickedTab={this.handleTabChange} 
-                handleNot={this.handleNotification} />
+                <Switchingtabs
+                  clickedTab={this.handleTabChange}
+                  handleNot={this.handleNotification}
+                />
               </div>
               <div className="Layout-btns-area p-0 col-9 ">
                 <Accordion notification={notifictaion} />

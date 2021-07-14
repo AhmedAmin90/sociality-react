@@ -15,7 +15,6 @@ import postImg from '../assests/imgs/postImg.png';
 import ShareImg from '../assests/icons/share.png';
 
 class Card extends Component {
-
     handleError = (e) => {
       e.target.src = DefaultImg;
     }
@@ -49,7 +48,7 @@ class Card extends Component {
           3: 'published-color',
           4: 'error-color',
         };
-        const status  = this.props.status
+        const { status } = this.props;
         return obj[status];
       };
 
@@ -196,9 +195,9 @@ class Card extends Component {
 
 Card.defaultProps = {
   img: postImg,
-  publishDate: "",
-  postBody: "",
-  channel: "",
+  publishDate: '',
+  postBody: '',
+  channel: '',
   status: 0,
 };
 
