@@ -75,11 +75,11 @@ class Switchingtabs extends Component {
       const newData = [];
       const { postsDates, posts } = this.state;
       postsDates.forEach((date) => {
-        { posts[date].forEach((post) => {
+        posts[date].forEach((post) => {
           if (post.account.name === name) {
             newData.push(post);
           }
-        }); }
+        });
       });
       // Connect Data with its publish date to update the dates in the state of layout:
       const datesArr = [];
