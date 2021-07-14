@@ -1,5 +1,4 @@
 import React , {Component} from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import Button from './Button';
 import IconOne from '../assests/icons/icon-1.png';
 import IconTwo from '../assests/icons/icon-2.png';
@@ -11,27 +10,32 @@ import IconSix from '../assests/icons/icon-6.png';
 
 class Accordion extends Component {
         state ={ buttons: [ {
+            id: 1,
             title:"summary",
             icon: IconTwo,
             clicked: false
         }, 
-        {
+        {   
+            id: 2,
             title:"publish",
             icon: IconThree,
             clicked: false,
             list: ["compose" , "feed"]
         },
         {
+            id: 3,
             title:"engage",
             icon: IconFour,
             clicked: false
         },
         {
+            id: 4,
             title:"listen",
             icon: IconFive,
             clicked: false
         }, 
         {
+            id: 5,
             title:"report",
             icon: IconSix,
             clicked: false
@@ -50,7 +54,7 @@ class Accordion extends Component {
 
     render(){
         const renderBtns = this.state.buttons.map(btn=>{
-            return <Button key={uuidv4()}  isClicked={btn.clicked} handleClick={this.handleClick} title={btn.title} icon={btn.icon} list={btn.list} />
+            return <Button key={btn.id}  isClicked={btn.clicked} handleClick={this.handleClick} title={btn.title} icon={btn.icon} list={btn.list} />
         }) 
         return(
             <div>

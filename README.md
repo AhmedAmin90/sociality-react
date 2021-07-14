@@ -69,7 +69,12 @@ npm start
 - I followed the design:
 
 ![screenshot](src/assests/imgs/design.png) 
-- The design is Not responsive, so I created the styles according to my screen size. So some changes in the style may be present on different screen sizes.
+- I assume that this platform is working on laptops and tablets screen sizes, so I adjust style for some important parts in the desing according to these screen sizes, and it is not responsive for other sizes. 
+1. Laptop:
+![screenshot](src/assests/imgs/res-laptop.png) 7
+2. Tablet:
+![screenshot](src/assests/imgs/res-tab.png) 
+
 
 
 ## Authors
