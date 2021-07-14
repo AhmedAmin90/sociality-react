@@ -75,3 +75,18 @@
 .Layout-Cards-area {
     margin-left: 20px;
 }
+
+
+
+@media (max-width: 1130px) {
+
+    .Layout-status-menu p {
+        margin: 10px;
+        font-size: 10px;
+    }
+
+    .Layout-status-list-dot {
+        width: 10px;
+      height: 10px;
+    }
+}

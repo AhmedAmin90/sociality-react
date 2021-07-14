@@ -26,7 +26,6 @@ class Button extends Component {
     
 
     render(){
-        // const btnIconColor = this.state.isClicked ? "Button-icon-clicked" : "Button-icon-notClicked";
         const btnClickedStyle = this.props.isClicked ? "Button-clicked-style" : "";
         const btnClicked = this.props.isClicked ?  <i className="fas fa-minus"></i> : <i className="fas fa-plus"></i>;
         const ulShowHide = this.props.isClicked ? "Button-list-show" : "Button-list-hide";
@@ -39,9 +38,8 @@ class Button extends Component {
                 <div className={`Buttons ${btnClickedStyle}`} onClick={this.handleClick}>
                     <div className="Button-icon-name">
                         <div className="Button-icon d-flex">
-                         <img src={this.props.icon} className="Button-icon-image" alt={`${this.props.name} icon`} />
+                         <img src={this.props.icon} className="Button-icon-image" alt={`${this.props.title} icon`} />
                         </div>
-                    {/* <i className={`${this.props.icon} ${btnIconColor}`}></i>  */}
                     <span>{this.props.title}</span>
                     </div>
                     <div className="Button-plus-minus-icon">

@@ -74,14 +74,13 @@ class Switchingtabs extends Component {
     handleTabClick = (name)=>{
         // Get correct data that related to the client (company) name:
         let newData = [];
-         this.state.postsDates.forEach(date=> {
+        this.state.postsDates.forEach(date=> {
             {this.state.posts[date].forEach(post=> {
                 if (post['account']['name'] === name) {
                     newData.push(post)
                 }
             })}
         })
-
         // Connect Data with its publish date to update the dates in the state of layout:
         let datesArr = []
         newData.forEach(post=>{

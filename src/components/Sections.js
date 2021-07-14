@@ -1,7 +1,7 @@
 import React , {Component} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import '../style/Sections.css';
-import Cards from './Cards';
+import Card from './Card';
 
 
 class Sections extends Component {
@@ -31,7 +31,7 @@ class Sections extends Component {
                     // Show the post under its correct publish date:
                     if (post['published_at'].split(' ').splice(0, 1).toString()=== date ) {
                         return <div className="Card-main col-4"  key={uuidv4()}>
-                        <Cards 
+                        <Card 
                         key={uuidv4()}
                         publishDate={`${newPublishDate} - ${postTime} ` } 
                         postBody={post['entry']['message']}

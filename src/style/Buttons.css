@@ -51,16 +51,6 @@
     font-weight: 500;
 }
 
-/*This was for font awesome icons */
-/* .Button-icon-clicked {
-    color: #495059;
-}
-
-.Button-icon-notClicked {
-    color: #f55661 ;
-} */
-
-
 /* List for the button */
 .Button-list-show {
     padding: 0 20px 20px 20px;
@@ -107,6 +97,7 @@
     font-size: 12px;
 }
 
+
 .Button-list-item {
     text-transform: capitalize;
     font-weight: 500;
@@ -118,4 +109,52 @@
 
 .notification-icon {
     margin-left: 10px;
+}
+
+
+/* For small screen and tablet  */
+@media (max-width: 1130px) {
+    .Button-icon-image {
+        width: 15px;
+        height: 15px;
+    }
+
+
+    .Button-icon-name span {
+        font-size: 12px;
+    }
+
+	.Buttons-notification-number  {
+		width: 18px;
+        height: 13px;
+        margin-right: 15px;
+        font-size: 10px;
+        
+	}
+
+    .notification-icon {
+        margin-left: 8px;
+    }
+
+    
+}
+
+@media (max-width: 900px) {
+
+    .Button-icon-name span {
+        font-size: 10px;
+    }
+    .Button-icon-image {
+        width: 13px;
+        height: 13px;
+    }
+
+    .Buttons-notification-number  {
+        margin-right: 10px;
+	}
+
+    .notification-icon {
+        margin-left: 3px;
+    }
+
 }
