@@ -3,7 +3,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import '../style/Sections.css';
+import './Sections.css';
 import Card from './Card';
 
 const Sections = ({ postsDates, posts }) => {

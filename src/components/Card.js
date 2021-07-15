@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../style/Card.css';
+import './Card.css';
 import DefaultImg from '../assests/imgs/noImg.png';
 import Delete from '../assests/icons/delete.png';
 import Approved from '../assests/icons/approved.png';
@@ -21,26 +21,6 @@ class Card extends Component {
 
     render() {
       const statusColor = () => {
-        // Switch way:
-        // switch(this.props.status) {
-        //     case 0:
-        //         return 'need-approval-color';
-        //         break;
-        //     case 1:
-        //         return 'scheduled-color';
-        //         break;
-        //     case 2 :
-        //         return 'publishing-color';
-        //         break;
-        //     case 3 :
-        //         return 'published-color';
-        //         break;
-        //     case 4 :
-        //         return 'error-color';
-        //         break;
-        // }
-
-        // Object way:
         const obj = {
           0: 'need-approval-color',
           1: 'scheduled-color',
@@ -168,6 +148,8 @@ class Card extends Component {
         );
       };
       const { publishDate, postBody, img } = this.props;
+      const renderSocialIcons = socialEngageIcons();
+      const renderActionICon = statusIcons();
       return (
 
         <div className="Card-body border m-2">
@@ -175,7 +157,7 @@ class Card extends Component {
           <div className="Card-content">
             <div className="Card-date">
               <p>{publishDate}</p>
-              {statusIcons()}
+              {renderActionICon}
             </div>
             <p className="Card-post-body">{postBody}</p>
             <img
@@ -184,7 +166,7 @@ class Card extends Component {
               onError={this.handleError}
               alt="post-cards-img"
             />
-            {socialEngageIcons()}
+            {renderSocialIcons}
 
           </div>
         </div>

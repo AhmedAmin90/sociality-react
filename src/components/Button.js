@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import '../style/Buttons.css';
+import './Buttons.css';
 
 class Button extends Component {
     handleClick = () => {
@@ -42,7 +42,10 @@ class Button extends Component {
         </li>
       )) : '';
       return (
-        <div className="Button">
+        <div
+          className="Button"
+
+        >
           <div
             className={`Buttons ${btnClickedStyle}`}
             onClick={this.handleClick}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import '../style/Tab.css';
+import './Tab.css';
 import logo from '../assests/imgs/logo-1.png';
 
 class Tab extends Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from './Layout';
-import '../style/App.css';
+import './App.css';
 
 const App = () => (
   <div className="App">

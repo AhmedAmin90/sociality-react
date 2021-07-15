@@ -5,7 +5,7 @@ import Sections from './Sections';
 import Status from './Status';
 import logo from '../assests/imgs/logo.png';
 import Profile from '../assests/imgs/profile.png';
-import '../style/Layout.css';
+import './Layout.css';
 
 class Layout extends Component {
   constructor(props) {

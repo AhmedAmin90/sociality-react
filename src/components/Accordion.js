@@ -17,6 +17,7 @@ class Accordion extends Component {
         title: 'summary',
         icon: IconTwo,
         clicked: false,
+        list: ['test'],
       },
       {
         id: 2,
@@ -30,18 +31,21 @@ class Accordion extends Component {
         title: 'engage',
         icon: IconFour,
         clicked: false,
+        list: ['test'],
       },
       {
         id: 4,
         title: 'listen',
         icon: IconFive,
         clicked: false,
+        list: ['test'],
       },
       {
         id: 5,
         title: 'report',
         icon: IconSix,
         clicked: false,
+        list: ['test'],
       },
       ],
     };

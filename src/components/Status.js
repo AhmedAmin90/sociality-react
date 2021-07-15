@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../style/Status.css';
+import './Status.css';
 
 class Status extends Component {
   constructor(props) {
