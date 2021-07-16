@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PropTypes from 'prop-types';
 import Tab from './Tab';
-import logoOne from '../assests/imgs/logo-1.png';
-import logoTwo from '../assests/imgs/logo-2.png';
-import logoThree from '../assests/imgs/logo-3.png';
-import logoFour from '../assests/imgs/logo-4.png';
-import logoFive from '../assests/imgs/logo-5.png';
-import logoSix from '../assests/imgs/logo-6.png';
+import logoOne from '../../assets/imgs/logo-1.png';
+import logoTwo from '../../assets/imgs/logo-2.png';
+import logoThree from '../../assets/imgs/logo-3.png';
+import logoFour from '../../assets/imgs/logo-4.png';
+import logoFive from '../../assets/imgs/logo-5.png';
+import logoSix from '../../assets/imgs/logo-6.png';
 
 class Switchingtabs extends Component {
   constructor(props) {

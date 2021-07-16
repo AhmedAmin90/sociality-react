@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Accordion from './Accordion';
-import Switchingtabs from './Switchingtab';
-import Sections from './Sections';
-import Status from './Status';
-import logo from '../assests/imgs/logo.png';
-import Profile from '../assests/imgs/profile.png';
+import Accordion from '../Accordion/Accordion';
+import Switchingtabs from '../SwitchingTabs/Switchingtab';
+import Sections from '../Sections/Sections';
+import Status from '../Status/Status';
+import logo from '../../assets/imgs/logo.png';
+import Profile from '../../assets/imgs/profile.png';
 import './Layout.css';
 
 class Layout extends Component {

@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { v4 as uuidv4 } from 'uuid';
-import './Buttons.css';
+import './AccordionItem.css';
 
-class Button extends Component {
+class AccordionItem extends Component {
     handleClick = () => {
       const { handleClick, title } = this.props;
       handleClick(title);
     }
 
     handleListClick = () => {
-      [...document.querySelectorAll('.Button-list-item')].forEach((item) => {
-        item.addEventListener('click', () => {
-          const getOtherItems = document.querySelector('.Button-list-item-active');
-          if (getOtherItems !== null) {
-            getOtherItems.classList.remove('Button-list-item-active');
-          }
-          item.classList.add('Button-list-item-active');
-        });
-      });
+      // [...document.querySelectorAll('.Button-list-item')].forEach((item) => {
+      //   item.addEventListener('click', () => {
+      //     const getOtherItems = document.querySelector('.Button-list-item-active');
+      //     if (getOtherItems !== null) {
+      //       getOtherItems.classList.remove('Button-list-item-active');
+      //     }
+      //     item.classList.add('Button-list-item-active');
+      //   });
+      // });
     }
 
     render() {
@@ -30,15 +29,15 @@ class Button extends Component {
       const ulShowHide = isClicked ? 'Button-list-show' : 'Button-list-hide';
       const ulText = list ? list.map((item) => (
         <li
-          key={uuidv4()}
+          key={item}
           className="Button-list-item"
           onClick={this.handleListClick}
           onKeyDown={this.handleListClick}
           role="menuitem"
         >
-          {' '}
+           
           {item}
-          {' '}
+           
         </li>
       )) : '';
       return (
@@ -72,7 +71,7 @@ class Button extends Component {
     }
 }
 
-Button.defaultProps = {
+AccordionItem.defaultProps = {
   isClicked: false,
   handleClick: () => {},
   title: '',
@@ -80,11 +79,11 @@ Button.defaultProps = {
   list: [],
 };
 
-Button.propTypes = {
+AccordionItem.propTypes = {
   isClicked: PropTypes.bool,
   handleClick: PropTypes.func,
   title: PropTypes.string,
   icon: PropTypes.string,
   list: PropTypes.instanceOf(Array),
 };
-export default Button;
+export default AccordionItem;

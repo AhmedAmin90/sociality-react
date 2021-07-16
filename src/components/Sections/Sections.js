@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import './Sections.css';
-import Card from './Card';
+import Card from '../Card/Card';
 
 const Sections = ({ postsDates, posts }) => {
   // Take the data from layout component state, and loop to show cards:

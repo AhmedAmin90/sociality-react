@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Card.css';
-import DefaultImg from '../assests/imgs/noImg.png';
-import Delete from '../assests/icons/delete.png';
-import Approved from '../assests/icons/approved.png';
-import Comment from '../assests/icons/comment.png';
-import LikeFace from '../assests/icons/likeFace.png';
-import LikeTwitter from '../assests/icons/likeTwitter.png';
-import Retweet from '../assests/icons/retweet.png';
-import Seen from '../assests/icons/seen.png';
-import Settings from '../assests/icons/settings.png';
-import WaitingApproval from '../assests/icons/waitingApproval.png';
-import postImg from '../assests/imgs/postImg.png';
-import ShareImg from '../assests/icons/share.png';
+import DefaultImg from '../../assets/imgs/noImg.png';
+import Delete from '../../assets/icons/delete.png';
+import Approved from '../../assets/icons/approved.png';
+import Comment from '../../assets/icons/comment.png';
+import LikeFace from '../../assets/icons/likeFace.png';
+import LikeTwitter from '../../assets/icons/likeTwitter.png';
+import Retweet from '../../assets/icons/retweet.png';
+import Seen from '../../assets/icons/seen.png';
+import Settings from '../../assets/icons/settings.png';
+import WaitingApproval from '../../assets/icons/waitingApproval.png';
+import postImg from '../../assets/imgs/postImg.png';
+import ShareImg from '../../assets/icons/share.png';
 
 class Card extends Component {
     handleError = (e) => {
@@ -92,27 +92,27 @@ class Card extends Component {
             <ul className="Card-under-img-icons">
               <li>
                 <img src={LikeTwitter} alt="post-cards-icon" />
-                {' '}
+                 
                 <p>0</p>
-                {' '}
+                 
               </li>
               <li>
                 <img src={Retweet} alt="post-cards-icon" />
-                {' '}
+                 
                 <p>0</p>
-                {' '}
+                 
               </li>
               <li>
                 <img src={Comment} alt="post-cards-icon" />
-                {' '}
+                 
                 <p>0</p>
-                {' '}
+                 
               </li>
               <li>
                 <img src={Seen} alt="post-cards-icon" />
-                {' '}
+                 
                 <p>0</p>
-                {' '}
+                 
               </li>
             </ul>
           );
@@ -122,27 +122,27 @@ class Card extends Component {
           <ul className="Card-under-img-icons">
             <li>
               <img src={LikeFace} alt="post-cards-icon" />
-              {' '}
+               
               <p>0</p>
-              {' '}
+               
             </li>
             <li>
               <img src={Comment} alt="post-cards-icon" />
-              {' '}
+               
               <p>0</p>
-              {' '}
+               
             </li>
             <li>
               <img src={ShareImg} alt="post-cards-icon" />
-              {' '}
+               
               <p>0</p>
-              {' '}
+               
             </li>
             <li>
               <img src={Seen} alt="post-cards-icon" />
-              {' '}
+               
               <p>0</p>
-              {' '}
+               
             </li>
           </ul>
         );

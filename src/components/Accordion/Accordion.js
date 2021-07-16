@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Button from './Button';
-import IconOne from '../assests/icons/icon-1.png';
-import IconTwo from '../assests/icons/icon-2.png';
-import IconThree from '../assests/icons/icon-3.png';
-import IconFour from '../assests/icons/icon-4.png';
-import IconFive from '../assests/icons/icon-5.png';
-import IconSix from '../assests/icons/icon-6.png';
+import AccordionItem from './AccordionItem';
+import IconOne from '../../assets/icons/icon-1.png';
+import IconTwo from '../../assets/icons/icon-2.png';
+import IconThree from '../../assets/icons/icon-3.png';
+import IconFour from '../../assets/icons/icon-4.png';
+import IconFive from '../../assets/icons/icon-5.png';
+import IconSix from '../../assets/icons/icon-6.png';
 
 class Accordion extends Component {
   constructor(props) {
@@ -67,7 +67,7 @@ class Accordion extends Component {
       const { notification } = this.props;
       const { buttons } = this.state;
       const renderBtns = buttons.map((btn) => (
-        <Button
+        <AccordionItem
           key={btn.id}
           isClicked={btn.clicked}
           handleClick={this.handleClick}
@@ -87,7 +87,7 @@ class Accordion extends Component {
             </div>
             <div className="Buttons-notification-number">
               {notification}
-              {' '}
+               
             </div>
           </div>
           {renderBtns}
