@@ -92,27 +92,27 @@ class Card extends Component {
             <ul className="Card-under-img-icons">
               <li>
                 <img src={LikeTwitter} alt="post-cards-icon" />
-                 
+
                 <p>0</p>
-                 
+
               </li>
               <li>
                 <img src={Retweet} alt="post-cards-icon" />
-                 
+
                 <p>0</p>
-                 
+
               </li>
               <li>
                 <img src={Comment} alt="post-cards-icon" />
-                 
+
                 <p>0</p>
-                 
+
               </li>
               <li>
                 <img src={Seen} alt="post-cards-icon" />
-                 
+
                 <p>0</p>
-                 
+
               </li>
             </ul>
           );
@@ -122,27 +122,27 @@ class Card extends Component {
           <ul className="Card-under-img-icons">
             <li>
               <img src={LikeFace} alt="post-cards-icon" />
-               
+
               <p>0</p>
-               
+
             </li>
             <li>
               <img src={Comment} alt="post-cards-icon" />
-               
+
               <p>0</p>
-               
+
             </li>
             <li>
               <img src={ShareImg} alt="post-cards-icon" />
-               
+
               <p>0</p>
-               
+
             </li>
             <li>
               <img src={Seen} alt="post-cards-icon" />
-               
+
               <p>0</p>
-               
+
             </li>
           </ul>
         );

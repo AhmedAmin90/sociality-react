@@ -12,85 +12,118 @@ class Accordion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      buttons: [{
+      accordionItems: [{
         id: 1,
         title: 'summary',
         icon: IconTwo,
         clicked: false,
-        list: ['test'],
+        list: [{
+          id: 1.1,
+          name: 'test',
+          clicked: false,
+        }],
+
       },
       {
         id: 2,
         title: 'publish',
         icon: IconThree,
         clicked: false,
-        list: ['compose', 'feed'],
+        list: [{
+          id: 2.1,
+          name: 'compose',
+          clicked: true,
+        },
+        {
+          id: 2.2,
+          name: 'feed',
+          clicked: false,
+        }],
+
       },
       {
         id: 3,
         title: 'engage',
         icon: IconFour,
         clicked: false,
-        list: ['test'],
+        list: [],
+
       },
       {
         id: 4,
         title: 'listen',
         icon: IconFive,
         clicked: false,
-        list: ['test'],
+        list: [{
+          id: 4.1,
+          name: 'test',
+          clicked: false,
+        }],
+
       },
       {
         id: 5,
         title: 'report',
         icon: IconSix,
         clicked: false,
-        list: ['test'],
+        list: [{
+          id: 5.1,
+          name: 'test',
+          clicked: false,
+        }],
+
       },
       ],
     };
   }
 
     handleClick = (title) => {
-      const { buttons } = this.state;
-      const clickedBtn = buttons.find((btn) => btn.title === title);
-      clickedBtn.clicked = !clickedBtn.clicked;
-      const otherBtns = buttons.filter((btn) => btn.title !== title);
-      otherBtns.forEach((btns) => {
-        const otherBtn = btns;
-        otherBtn.clicked = false;
+      const { accordionItems } = this.state;
+      const clickedItem = accordionItems.find((item) => item.title === title);
+      clickedItem.clicked = !clickedItem.clicked;
+      const otherItems = accordionItems.filter((item) => item.title !== title);
+      otherItems.forEach((items) => {
+        const otherItem = items;
+        otherItem.clicked = false;
       });
-      this.setState({ buttons: [...buttons] });
+      accordionItems.forEach((item) => {
+        item.list.forEach((listItem) => {
+          const otherListItems = listItem;
+          otherListItems.clicked = false;
+        });
+      });
+      this.setState({ accordionItems: [...accordionItems] });
     }
 
     render() {
       const { notification } = this.props;
-      const { buttons } = this.state;
-      const renderBtns = buttons.map((btn) => (
+      const { accordionItems } = this.state;
+      const renderItems = accordionItems.map((Item) => (
         <AccordionItem
-          key={btn.id}
-          isClicked={btn.clicked}
+          key={Item.id}
+          isClicked={Item.clicked}
           handleClick={this.handleClick}
-          title={btn.title}
-          icon={btn.icon}
-          list={btn.list}
+          title={Item.title}
+          icon={Item.icon}
+          list={Item.list}
         />
+
       ));
       return (
         <div>
-          <div className="Buttons p-0">
-            <div className="Button-icon-name">
-              <div className="Button-icon d-flex">
-                <img src={IconOne} alt="notification icon" className="Button-icon-image notification-icon" />
+          <div className="AccordionItems p-0">
+            <div className="AccordionItem-icon-name">
+              <div className="AccordionItem-icon d-flex">
+                <img src={IconOne} alt="notification icon" className="AccordionItem-icon-image notification-icon" />
               </div>
               <span> notification </span>
             </div>
-            <div className="Buttons-notification-number">
+            <div className="AccordionItems-notification-number">
               {notification}
-               
+
             </div>
           </div>
-          {renderBtns}
+          {renderItems}
         </div>
       );
     }

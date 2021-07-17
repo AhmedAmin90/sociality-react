@@ -1,69 +1,71 @@
+/* eslint-disable  react/no-access-state-in-setstate */
+/* eslint-disable react/no-unused-prop-types */
+/* eslint-disable */
 import React, { Component } from 'react';
+import List from './List';
 import PropTypes from 'prop-types';
 import './AccordionItem.css';
 
 class AccordionItem extends Component {
+  constructor(props){
+    super(props);
+    this.state = {list: []}
+  }
     handleClick = () => {
+      this.setState({list: [...this.props.list]})
       const { handleClick, title } = this.props;
       handleClick(title);
     }
 
-    handleListClick = () => {
-      // [...document.querySelectorAll('.Button-list-item')].forEach((item) => {
-      //   item.addEventListener('click', () => {
-      //     const getOtherItems = document.querySelector('.Button-list-item-active');
-      //     if (getOtherItems !== null) {
-      //       getOtherItems.classList.remove('Button-list-item-active');
-      //     }
-      //     item.classList.add('Button-list-item-active');
-      //   });
-      // });
+    handleListClick = (id)=>{
+      const { list } = this.state;
+      const selectedItem = list.find(item => item.id === id);
+      selectedItem.clicked = !selectedItem.clicked;
+      const otherItems = list.filter((Item) => Item.id !== id);
+      otherItems.forEach((Items) => {
+        const otherItem = Items;
+        otherItem.clicked = false;
+      });
+      this.setState({list: [...list]})
     }
+
+    
 
     render() {
       const {
-        isClicked, list, icon, title,
+        isClicked , icon, title,
       } = this.props;
-      const btnClickedStyle = isClicked ? 'Button-clicked-style' : '';
-      const btnClicked = isClicked ? <i className="fas fa-minus" /> : <i className="fas fa-plus" />;
-      const ulShowHide = isClicked ? 'Button-list-show' : 'Button-list-hide';
-      const ulText = list ? list.map((item) => (
-        <li
-          key={item}
-          className="Button-list-item"
-          onClick={this.handleListClick}
-          onKeyDown={this.handleListClick}
-          role="menuitem"
-        >
-           
-          {item}
-           
-        </li>
-      )) : '';
+      const { list } = this.state;
+      const ItemClickedStyle = isClicked ? 'AccordionItem-clicked-style' : '';
+      const ItemClicked = isClicked ? <i className="fas fa-minus" /> : <i className="fas fa-plus" />;
+      const ulShowHide = isClicked && list.length !== 0 ? 'AccordionItem-list-show' : 'AccordionItem-list-hide';
+      const ulText = list ? list.map((item) => 
+         <List key={item.id} id={item.id} name={item.name} clicked={item.clicked} handleListClick={this.handleListClick}/>
+      ) : '';
       return (
         <div
-          className="Button"
+          className="AccordionItem"
 
         >
           <div
-            className={`Buttons ${btnClickedStyle}`}
+            className={`AccordionItems ${ItemClickedStyle}`}
             onClick={this.handleClick}
             onKeyDown={this.handleClick}
             role="button"
             tabIndex={0}
           >
-            <div className="Button-icon-name">
-              <div className="Button-icon d-flex">
-                <img src={icon} className="Button-icon-image" alt={`${title} icon`} />
+            <div className="AccordionItem-icon-name">
+              <div className="AccordionItem-icon d-flex">
+                <img src={icon} className="AccordionItem-icon-image" alt={`${title} icon`} />
               </div>
               <span>{title}</span>
             </div>
-            <div className="Button-plus-minus-icon">
-              {btnClicked}
+            <div className="AccordionItem-plus-minus-icon">
+              {ItemClicked}
             </div>
           </div>
           <ul className={ulShowHide}>
-            <div className="Button-down-arrow" />
+            <div className="AccordionItem-down-arrow" />
             {ulText}
           </ul>
         </div>
@@ -77,6 +79,7 @@ AccordionItem.defaultProps = {
   title: '',
   icon: '',
   list: [],
+  listClicked: [false],
 };
 
 AccordionItem.propTypes = {
@@ -85,5 +88,6 @@ AccordionItem.propTypes = {
   title: PropTypes.string,
   icon: PropTypes.string,
   list: PropTypes.instanceOf(Array),
+  listClicked: PropTypes.instanceOf(Array),
 };
 export default AccordionItem;
