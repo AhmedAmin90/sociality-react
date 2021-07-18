@@ -13,10 +13,9 @@ class Tab extends Component {
 
     handleClick = () => {
       const {
-        tabClick, tabStyle, name, id,
+        tabClick, name,
       } = this.props;
       tabClick(name);
-      tabStyle(id);
     }
 
     render() {
@@ -47,21 +46,17 @@ class Tab extends Component {
 
 Tab.defaultProps = {
   logo,
-  id: 0,
   name: '',
   notifictaion: 0,
   isClicked: false,
-  tabStyle: () => {},
   tabClick: () => {},
 };
 
 Tab.propTypes = {
-  id: PropTypes.number,
   logo: PropTypes.string,
   name: PropTypes.string,
   notifictaion: PropTypes.number,
   isClicked: PropTypes.bool,
-  tabStyle: PropTypes.func,
   tabClick: PropTypes.func,
 };
 

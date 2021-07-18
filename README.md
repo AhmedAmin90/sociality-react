@@ -18,19 +18,19 @@
 - User logo.
 
 # Entry screen:
-![screenshot](src/assests/imgs/home-app.png) 
+![screenshot](src/assets/imgs/home-app.png) 
 
 # Rednering posts:
 1. 
-![screenshot](src/assests/imgs/render-posts.png) 
+![screenshot](src/assets/imgs/render-posts.png) 
 
 2.
-![screenshot](src/assests/imgs/no-img.png) 
+![screenshot](src/assets/imgs/no-img.png) 
 
 # Notification number:
 The notfication of each tab will show on the specified place in the notification button.
 
-![screenshot](src/assests/imgs/notification-number.png) 
+![screenshot](src/assets/imgs/notification-number.png) 
 
 
 
@@ -68,12 +68,12 @@ npm start
 # Notes:
 - I followed the design:
 
-![screenshot](src/assests/imgs/design.png) 
+![screenshot](src/assets/imgs/design.png) 
 - I assume that this platform is working on laptops and tablets screen sizes, so I adjust style for some important parts in the desing according to these screen sizes, and it is not responsive for other sizes. 
 1. Laptop:
-![screenshot](src/assests/imgs/res-laptop.png) 7
+![screenshot](src/assets/imgs/res-laptop.png) 7
 2. Tablet:
-![screenshot](src/assests/imgs/res-tab.png) 
+![screenshot](src/assets/imgs/res-tab.png) 
 
 
 

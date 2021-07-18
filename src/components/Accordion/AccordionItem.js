@@ -1,47 +1,43 @@
 /* eslint-disable  react/no-access-state-in-setstate */
 /* eslint-disable react/no-unused-prop-types */
-/* eslint-disable */
 import React, { Component } from 'react';
-import List from './List';
 import PropTypes from 'prop-types';
+import List from './List';
 import './AccordionItem.css';
 
 class AccordionItem extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state = {list: []}
+    this.state = { list: [] };
   }
+
     handleClick = () => {
-      this.setState({list: [...this.props.list]})
-      const { handleClick, title } = this.props;
+      const { handleClick, title, list } = this.props;
+      this.setState({ list: [...list] });
       handleClick(title);
     }
 
-    handleListClick = (id)=>{
+    handleListClick = (id) => {
       const { list } = this.state;
-      const selectedItem = list.find(item => item.id === id);
+      const selectedItem = list.find((item) => item.id === id);
       selectedItem.clicked = !selectedItem.clicked;
       const otherItems = list.filter((Item) => Item.id !== id);
       otherItems.forEach((Items) => {
         const otherItem = Items;
         otherItem.clicked = false;
       });
-      this.setState({list: [...list]})
+      this.setState({ list: [...list] });
     }
-
-    
 
     render() {
       const {
-        isClicked , icon, title,
+        isClicked, icon, title,
       } = this.props;
       const { list } = this.state;
       const ItemClickedStyle = isClicked ? 'AccordionItem-clicked-style' : '';
       const ItemClicked = isClicked ? <i className="fas fa-minus" /> : <i className="fas fa-plus" />;
       const ulShowHide = isClicked && list.length !== 0 ? 'AccordionItem-list-show' : 'AccordionItem-list-hide';
-      const ulText = list ? list.map((item) => 
-         <List key={item.id} id={item.id} name={item.name} clicked={item.clicked} handleListClick={this.handleListClick}/>
-      ) : '';
+      const ulText = list ? list.map((item) => <List key={item.id} id={item.id} name={item.name} clicked={item.clicked} handleListClick={this.handleListClick} />) : '';
       return (
         <div
           className="AccordionItem"

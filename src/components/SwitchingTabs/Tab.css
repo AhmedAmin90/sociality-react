@@ -13,7 +13,7 @@
 .Tabs-img img {
   margin-right: 10px;
   width: 45px;
-  border-radius: 10px;
+  border-radius: 7px;
   padding: 2px;
   cursor: pointer;
   background-position: center;
@@ -26,16 +26,16 @@
 }
 
 .Tabs-notCliked {
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 /* Hidden Div */
 .Tabs-hidden {
   background-color: #f55661;
   width: 5px;
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
-  margin: 7.5px 0 7.5px 0;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 7px 0;
 }
 
 .Tabs-div-show {
