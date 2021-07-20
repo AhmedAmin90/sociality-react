@@ -1,0 +1,155 @@
+.AccordionItems {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  cursor: pointer;
+  padding: 20px;
+  padding-left: 0;
+}
+
+.AccordionItem-icon-name {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.AccordionItem-icon {
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.AccordionItem-icon-image {
+  width: 20px;
+  height: 20px;
+  align-self: center;
+}
+
+.AccordionItem-icon-name span {
+  width: 75%;
+  font-size: 15px;
+  color: white;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: left;
+  align-self: center;
+}
+
+.AccordionItem-plus-minus-icon {
+  color: #1d1d1d;
+  font-size: 15px;
+}
+
+.AccordionItem-clicked-style {
+  background-color: #f55661;
+}
+
+.AccordionItem-clicked-style span {
+  font-weight: 500;
+}
+
+/* List for the AccordionItem */
+.AccordionItem-list-show {
+  padding: 0 20px 20px 20px;
+  color: white;
+  text-transform: capitalize;
+  font-size: 13px;
+  text-align: left;
+  background-color: #2a2f33;
+}
+
+.AccordionItem-list-show li {
+  margin-top: 15px;
+  margin-left: 25px;
+  cursor: pointer;
+}
+
+.active {
+  color: #f55661;
+}
+
+.AccordionItem-list-hide {
+  display: none;
+}
+
+.AccordionItem-down-arrow {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f55661;
+}
+
+.AccordionItems-notification-number {
+  width: 30px;
+  height: 20px;
+  margin-right: 15px;
+  border: #5c9b92 solid 1px;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.AccordionItem-list-item {
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.AccordionItem-list-item-active {
+  color: #f55661;
+}
+
+.notification-icon {
+  margin-left: 10px;
+}
+
+/* For small screen and tablet  */
+@media (max-width: 1130px) {
+  .AccordionItem-icon-image {
+    width: 15px;
+    height: 15px;
+  }
+
+  .AccordionItem-icon-name span {
+    font-size: 12px;
+  }
+
+  .AccordionItems-notification-number {
+    width: 18px;
+    height: 13px;
+    margin-right: 15px;
+    font-size: 10px;
+  }
+
+  .notification-icon {
+    margin-left: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .AccordionItem-icon-name span {
+    font-size: 10px;
+  }
+
+  .AccordionItem-icon-image {
+    width: 13px;
+    height: 13px;
+  }
+
+  .AccordionItems-notification-number {
+    margin-right: 10px;
+  }
+
+  .notification-icon {
+    margin-left: 3px;
+  }
+
+  .AccordionItem-list-show li {
+    font-size: 10px;
+  }
+}

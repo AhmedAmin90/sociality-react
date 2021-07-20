@@ -1,0 +1,87 @@
+.Tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Tabs-img {
+  margin: 5px auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.Tabs-img img {
+  margin-right: 10px;
+  width: 45px;
+  border-radius: 7px;
+  padding: 2px;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+}
+
+.tabClicked {
+  opacity: 1;
+  padding: 0;
+}
+
+.Tabs-notCliked {
+  opacity: 0.2;
+}
+
+/* Hidden Div */
+.Tabs-hidden {
+  background-color: #f55661;
+  width: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+  margin: 7px 0;
+}
+
+.Tabs-div-show {
+  opacity: 1;
+}
+
+.Tabs-div-hide {
+  opacity: 0;
+}
+
+/* Notification */
+.Tabs-notification-show {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #54c9b4;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  margin-top: -2px;
+  font-size: 12px;
+  z-index: 1;
+}
+
+.Tabs-notification-hide {
+  display: none;
+}
+
+@media (max-width: 1130px) {
+  .Tabs-img img {
+    width: 35px;
+  }
+
+  .Tabs-notification-show {
+    width: 15px;
+    height: 15px;
+    font-size: 10px;
+    position: absolute;
+    top: 0;
+    right: 5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .Tabs-img img {
+    width: 30px;
+  }
+}

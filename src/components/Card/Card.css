@@ -1,0 +1,113 @@
+.Card-body {
+  display: flex;
+  padding: 0;
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+.Card-social-icon {
+  width: 12%;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.need-approval-color {
+  background-color: #f7bf38;
+}
+
+.scheduled-color {
+  background-color: #3ac183;
+}
+
+.published-color,
+.publishing-color {
+  background-color: #acacac;
+}
+
+.error-color {
+  background-color: #fb6450;
+}
+
+.Card-social-icon i {
+  font-size: 20px;
+  color: white;
+}
+
+.Card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.Card-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Card-date p {
+  margin-left: 3px;
+  text-align: left;
+  color: #acacac;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.Card-date ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+  width: 35%;
+  justify-content: flex-end;
+}
+
+.Card-under-img-icons li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Card-date ul li {
+  align-self: center;
+  margin-left: 10px;
+}
+
+.Card-post-body {
+  text-align: left;
+  margin: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #959595;
+}
+
+.Card-post-img {
+  width: 95%;
+  height: 50%;
+  margin: 0 auto;
+}
+
+.Card-under-img-icons {
+  margin: 10px 10px;
+  display: flex;
+  list-style: none;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0;
+}
+
+.Card-under-img-icons li img {
+  width: 20px;
+}
+
+.Card-under-img-icons li p {
+  align-self: center;
+  margin: 10px;
+  font-size: 15px;
+  color: #444;
+}
