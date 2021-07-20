@@ -5,14 +5,14 @@
 
 # In this application:
 - The dashboard has a sidebar including the brand switching tab and an accordion menu and has the content area including the social media posts.
-- Each client has a tab with its logo with number of notification.
-- When the user click on the tab, the client posts will appear in the content area.
+- Each client has a tab with its logo with the number of notifications.
+- When the user clicks on the tab, the client posts will appear in the content area.
 - The posts cards contains information about:
     1. Status of the post.
     2. Icons related to the status.
     3. Icons related to the social media platform.
-    4. Data of the post (Date of publish , body , image (if the image is not loaded it will be replaced by a default image)).
-    5. Data related to the posts engagment.
+    4. Data of the post (Date of publish, body, image (if the image is not loaded it will be replaced by a default image)).
+    5. Data related to the post engagement.
 - Accordion menu with Buttons.
 - Status bar shows the color scheme of each status.
 - User logo.
@@ -28,7 +28,7 @@
 ![screenshot](src/assets/imgs/no-img.png) 
 
 # Notification number:
-The notfication of each tab will show on the specified place in the notification button.
+The notification of each tab will show on the specified place in the notification button.
 
 ![screenshot](src/assets/imgs/notification-number.png) 
 
@@ -69,7 +69,7 @@ npm start
 - I followed the design:
 
 ![screenshot](src/assets/imgs/design.png) 
-- I assume that this platform is working on laptops and tablets screen sizes, so I adjust style for some important parts in the desing according to these screen sizes, and it is not responsive for other sizes. 
+- I assume that this platform is working on laptops and tablets screen sizes, so I adjust the style for some important parts in the design according to these screen sizes, and it is not responsive for other sizes. 
 1. Laptop:
 ![screenshot](src/assets/imgs/res-laptop.png) 7
 2. Tablet:
