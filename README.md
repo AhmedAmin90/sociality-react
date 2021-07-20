@@ -7,14 +7,14 @@
 - The dashboard has a sidebar including the brand switching tab and an accordion menu and has the content area including the social media posts.
 - Each client has a tab with its logo with the number of notifications.
 - When the user clicks on the tab, the client posts will appear in the content area.
-- The posts cards contains information about:
+- The posts cards contain information about:
     1. Status of the post.
     2. Icons related to the status.
     3. Icons related to the social media platform.
     4. Data of the post (Date of publish, body, image (if the image is not loaded it will be replaced by a default image)).
     5. Data related to the post engagement.
 - Accordion menu with Buttons.
-- Status bar shows the color scheme of each status.
+- The status bar shows the color scheme of each status.
 - User logo.
 
 # Entry screen:
